@@ -1,0 +1,83 @@
+{
+    "appliance_id": "c90f3ff3-4ed2-4437-9afb-21232fa92015",
+    "name": "Arista vEOS",
+    "category": "multilayer_switch",
+    "description": "Arista EOS is the core of Arista cloud networking solutions for next-generation data centers and cloud networks. Cloud architectures built with Arista EOS scale to tens of thousands of compute and storage nodes with management and provisioning capabilities that work at scale. Through its programmability, EOS enables a set of software applications that deliver workflow automation, high availability, unprecedented network visibility and analytics and rapid integration with a wide range of third-party applications for virtualization, management, automation and orchestration services.\n\nArista Extensible Operating System (EOS) is a fully programmable and highly modular, Linux-based network operation system, using familiar industry standard CLI and runs a single binary software image across the Arista switching family. Architected for resiliency and programmability, EOS has a unique multi-process state sharing architecture that separates state information and packet forwarding from protocol processing and application logic.",
+    "vendor_name": "Arista",
+    "vendor_url": "http://www.arista.com/",
+    "documentation_url": "https://www.arista.com/assets/data/docs/Manuals/EOS-4.17.2F-Manual.pdf",
+    "product_name": "vEOS",
+    "product_url": "https://eos.arista.com/",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "The login is admin, with no password by default",
+    "symbol": ":/symbols/multilayer_switch.svg",
+    "first_port_name": "Management1",
+    "port_name_format": "Ethernet{port1}",
+    "qemu": {
+        "adapter_type": "e1000",
+        "adapters": 13,
+        "ram": 2048,
+        "hda_disk_interface": "ide",
+        "hdb_disk_interface": "ide",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "kvm": "require",
+        "options": "-cpu host"
+    },
+    "images": [
+        {
+            "filename": "vEOS64-lab-4.33.2F.qcow2",
+            "version": "4.33.2F",
+            "md5sum": "fbe629a8342cd0b3b19566b9d7ef4f4f",
+            "filesize": 610992128,
+            "download_url": "https://www.arista.com/en/support/software-download"
+        },
+        {
+            "filename": "vEOS64-lab-4.32.4.1M.qcow2",
+            "version": "4.32.4.1M",
+            "md5sum": "cd369b5ccfd87ccd83a34538681ba35f",
+            "filesize": 605159424,
+            "download_url": "https://www.arista.com/en/support/software-download"
+        },
+        {
+            "filename": "vEOS64-lab-4.31.6M.qcow2",
+            "version": "4.31.6M",
+            "md5sum": "02fbd929de9416e1096cd2454507d6ce",
+            "filesize": 590479360,
+            "download_url": "https://www.arista.com/en/support/software-download"
+        },
+        {
+            "filename": "Aboot-veos-serial-8.0.2.iso",
+            "version": "8.0.2",
+            "md5sum": "8d7e754efebca1930a93a2587ff7606c",
+            "filesize": 6291456,
+            "download_url": "https://www.arista.com/en/support/software-download"
+        }
+    ],
+    "versions": [
+        {
+            "name": "4.33.2F",
+            "images": {
+                "hda_disk_image": "Aboot-veos-serial-8.0.2.iso",
+                "hdb_disk_image": "vEOS64-lab-4.33.2F.qcow2"
+            }
+        },
+        {
+            "name": "4.32.4.1M",
+            "images": {
+                "hda_disk_image": "Aboot-veos-serial-8.0.2.iso",
+                "hdb_disk_image": "vEOS64-lab-4.32.4.1M.qcow2"
+            }
+        },
+        {
+            "name": "4.31.6M",
+            "images": {
+                "hda_disk_image": "Aboot-veos-serial-8.0.2.iso",
+                "hdb_disk_image": "vEOS64-lab-4.31.6M.qcow2"
+            }
+        }
+    ]
+}

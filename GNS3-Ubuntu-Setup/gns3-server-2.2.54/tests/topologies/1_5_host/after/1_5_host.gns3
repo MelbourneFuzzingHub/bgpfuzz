@@ -1,0 +1,55 @@
+{
+    "auto_start": false,
+    "name": "1_5_host",
+    "project_id": "ce17e635-bc1b-44df-946c-149e938dedc4",
+    "revision": 6,
+    "topology": {
+        "computes": [
+            {
+                "compute_id": "local",
+                "host": "127.0.0.1",
+                "name": "Local",
+                "port": 3080,
+                "protocol": "http"
+            }
+        ],
+        "drawings": [],
+        "links": [],
+        "nodes": [
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_type": "none",
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "Host 1",
+                    "x": 13,
+                    "y": -25
+                },
+                "name": "Host 1",
+                "node_id": "ANYUUID",
+                "node_type": "cloud",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "first_port_name": null,
+                "properties": {
+                    "interfaces": [
+                    ],
+                    "ports_mapping": [
+                      {"interface": "bridge0", "port_number": 1, "type": "ethernet", "name": "bridge0"},
+                      {"interface": "en0", "port_number": 2, "type": "ethernet", "name": "en0"},
+                      {"interface": "en1", "port_number": 3, "type": "ethernet", "name": "en1"},
+                      {"interface": "en2", "port_number": 4, "type": "ethernet", "name": "en2"}
+                    ]
+                },
+                "symbol": ":/symbols/computer.svg",
+                "x": -69,
+                "y": -82,
+                "z": 1
+            }
+        ]
+    },
+    "type": "topology",
+    "version": "ANYSTR"
+}

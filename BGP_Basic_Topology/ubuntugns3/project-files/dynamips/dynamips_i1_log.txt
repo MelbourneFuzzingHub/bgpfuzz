@@ -1,0 +1,10 @@
+Nov 07 14:35:11.599 HYPERVISOR: Release 0.2.14-amd64/Linux (tag 2014092320)
+Nov 07 14:35:11.599 HYPERVISOR: Started on IP = localhost, TCP port = 56695.
+Nov 07 14:35:11.621 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 07 14:35:11.624 HYPERVISOR: exec_cmd: hypervisor working_dir /home/test/GNS3/projects/multi-router-project/project-files/dynamips 
+Nov 07 14:35:11.624 GENERAL: working_dir=/home/test/GNS3/projects/multi-router-project/project-files/dynamips
+Nov 07 14:35:11.626 HYPERVISOR: exec_cmd: ethsw create Switch2 
+Nov 07 14:35:15.631 HYPERVISOR: exec_cmd: ethsw delete Switch2 
+Nov 07 14:35:15.635 HYPERVISOR: exec_cmd: hypervisor stop 
+Nov 07 14:35:16.121 HYPERVISOR: Stopped.
+Nov 07 14:35:16.122 GENERAL: reset done.

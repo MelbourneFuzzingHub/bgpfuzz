@@ -1,0 +1,44 @@
+{
+    "appliance_id": "4b027aee-8214-4c97-ad8b-89abc67641bd",
+    "name": "NETem",
+    "category": "guest",
+    "description": "NETem emulates a network link, typically a WAN link. It supports bandwidth limitation, delay, jitter and packet loss. All this functionality is already build in the linux kernel, NETem is just a menu system to make the configuration user-friendly.",
+    "vendor_name": "Linux",
+    "vendor_url": "http://www.linuxfoundation.org/",
+    "documentation_url": "http://www.cs.unm.edu/~crandall/netsfall13/TCtutorial.pdf",
+    "product_name": "netem",
+    "registry_version": 4,
+    "status": "experimental",
+    "maintainer": "Bernhard Ehlers",
+    "maintainer_email": "none@b-ehlers.de",
+    "usage": "Insert the NETem VM between two network elements and connect it to them. NETem is fully transparent, it bridges the traffic from one interface to the other one. As NETem only bridges, it needs no IP addresses. On start a menu on the console allows a user-friendy configuration of the line parameters.",
+    "port_name_format": "eth{0}",
+    "qemu": {
+        "adapter_type": "e1000",
+        "adapters": 2,
+        "ram": 96,
+        "hda_disk_interface": "ide",
+        "arch": "i386",
+        "console_type": "telnet",
+        "kvm": "allow",
+        "options": "-nographic"
+    },
+    "images": [
+        {
+            "filename": "NETem-v4.qcow2",
+            "version": "0.4",
+            "md5sum": "e678698c97804901c7a53f6b68c8b861",
+            "filesize": 26476544,
+            "download_url": "https://sourceforge.net/projects/gns-3/files/Qemu%20Appliances/",
+            "direct_download_url": "https://sourceforge.net/projects/gns-3/files/Qemu%20Appliances/NETem-v4.qcow2/download"
+        }
+    ],
+    "versions": [
+        {
+            "name": "0.4",
+            "images": {
+                "hda_disk_image": "NETem-v4.qcow2"
+            }
+        }
+    ]
+}

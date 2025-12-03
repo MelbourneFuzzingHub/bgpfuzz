@@ -1,0 +1,64 @@
+{
+    "appliance_id": "0293ded2-0ca3-4052-913f-8c2d872e46ba",
+    "name": "EXOS VM",
+    "category": "multilayer_switch",
+    "description": "The ExtremeXOS VM is created and maintained by Extreme Networks for users to emulate a network using EXOS switches.",
+    "vendor_name": "Extreme Networks",
+    "vendor_url": "https://www.extremenetworks.com",
+    "documentation_url": "https://www.extremenetworks.com/support/documentation",
+    "product_name": "EXOS VM",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "Extreme Networks",
+    "maintainer_email": "GitHubscripting@extremenetworks.com",
+    "usage": "Boot up and login is admin with no password.",
+    "symbol": ":/symbols/multilayer_switch.svg",
+    "first_port_name": "Mgmt",
+    "port_name_format": "Port{port1}",
+    "qemu": {
+        "adapter_type": "rtl8139",
+        "adapters": 13,
+        "ram": 512,
+        "hda_disk_interface": "ide",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "boot_priority": "dc",
+        "kvm": "allow",
+        "options": "-cpu core2duo"
+    },
+    
+    "images": [
+
+		{
+            "filename": "EXOS-VM_32.7.2.19.qcow2",
+            "version": "32.7.2.19",
+            "md5sum": "eba580a2e18d2a9cc972c9ece8917ea8",
+            "filesize": 236847104,
+            "direct_download_url": "https://akamai-ep.extremenetworks.com/Extreme_P/github-en/Virtual_EXOS/EXOS-VM_32.7.2.19.qcow2"
+        },
+        {
+            "filename": "EXOS-VM_v32.6.3.126.qcow2",
+            "version": "32.6.3.126",
+            "md5sum": "5856b6c427bd605fe1c7adb6ee6b2659",
+            "filesize": 236716032,
+            "direct_download_url": "https://akamai-ep.extremenetworks.com/Extreme_P/github-en/Virtual_EXOS/EXOS-VM_v32.6.3.126.qcow2"
+        }
+
+    ],
+    
+    "versions": [
+
+        {
+            "name": "32.7.2.19",
+            "images": {
+                "hda_disk_image": "EXOS-VM_32.7.2.19.qcow2"
+            }
+        },
+        {
+            "name": "32.6.3.126",
+            "images": {
+                "hda_disk_image": "EXOS-VM_v32.6.3.126.qcow2"
+            }
+        }
+    ]
+}

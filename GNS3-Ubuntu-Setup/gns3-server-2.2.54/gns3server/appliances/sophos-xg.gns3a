@@ -1,0 +1,198 @@
+{
+    "appliance_id": "2370a587-20e7-468e-ace9-7bd61063aff4",
+    "name": "Sophos XG Firewall",
+    "category": "firewall",
+    "description": "Sophos XG Firewall delivers the ultimate enterprise firewall performance, security, and control.\n\nFastpath packet optimization technology with up to 140Gbps throughput\nRevolutionary Security Heartbeat\u2122 for improved Advanced Threat Protection (ATP) and response\nPatented Layer-8 user identity control and visibility\nUnified App, Web, QoS, and IPS Policy simplifies management\nApp risk factor and user threat quotient monitors risk levels",
+    "vendor_name": "Sophos",
+    "vendor_url": "https://www.sophos.com",
+    "documentation_url": "https://www.sophos.com/en-us/support/documentation/sophos-xg-firewall.aspx",
+    "product_name": "Sophos XG Firewall",
+    "product_url": "https://www.sophos.com/en-us/products/next-gen-firewall.aspx",
+    "registry_version": 4,
+    "status": "experimental",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "Port 0 => You computer for the configurtation\nPort 1 => WAN\n\n1. You need a serial number. You can get a trial from Sophos for free.\nUpon starting for the first time, access the setup screen at https://172.16.16.16 (Note: it may take a few minutes for the necessary services to start before the setup screen is ready).\n3. When you are prompted the default administrator credentials are:\nUsername: admin\nPassword: admin\n\n4. Make sure the device is setup for internet access (required for activation): change the network settings from the Basic Setup screen if necessary.\n5. Enter your serial number (provided below) into the setup screen and click \"Activate Device\".\n6. Then register your device with your MySophos ID by clicking \"Register Device\" and entering your MySophos ID and password that you used to download the software.\\\n7. Once the device is registered, you can initiate License Synchronization and proceed with the rest of the configuration.",
+    "qemu": {
+        "adapter_type": "virtio-net-pci",
+        "adapters": 4,
+        "ram": 1024,
+        "hda_disk_interface": "virtio",
+        "hdb_disk_interface": "virtio",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "kvm": "require"
+    },
+    "images": [
+        {
+            "filename": "VI-18.5.2_MR-2.KVM-380-PRIMARY.qcow2",
+            "version": "18.5.2 MR2",
+            "md5sum": "d3b99cd9519fae06e4ef348af34fef2b",
+            "filesize": 458555392,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-18.5.2_MR-2.KVM-380-AUXILIARY.qcow2",
+            "version": "18.5.2 MR2",
+            "md5sum": "9cf2ebc15c92f712e28f8e45a29ee613",
+            "filesize": 11272192,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-17.1.3_MR-3.KVM-250-PRIMARY.qcow2",
+            "version": "17.1.3 MR3",
+            "md5sum": "f11c4f63656bcdacbd27c44c52416941",
+            "filesize": 298844160,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-17.1.3_MR-3.KVM-250-AUXILARY.qcow2",
+            "version": "17.1.3 MR3",
+            "md5sum": "fbea59f7aa81f305bea78c86f82dc3a6",
+            "filesize": 59441152,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_17.0.2_MR-2.KVM-116-PRIMARY.qcow2",
+            "version": "17.0.2 MR2",
+            "md5sum": "2555fa6dcdcecad02c9f02dcb1c0c5e5",
+            "filesize": 324599808,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_17.0.2_MR-2.KVM-116-AUXILARY.qcow2",
+            "version": "17.0.2 MR2",
+            "md5sum": "c3ef795423dbfc01771348b0daa75125",
+            "filesize": 59441152,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_16.05.4_MR-4.KVM-215-PRIMARY.qcow2",
+            "version": "16.05.4 MR4",
+            "md5sum": "20535c9e624f42e1977f1e407fbc565e",
+            "filesize": 287113216,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_16.05.4_MR-4.KVM-215-AUXILARY.qcow2",
+            "version": "16.05.4 MR4",
+            "md5sum": "cafac2d997a3ead087d5823b86ce6cb4",
+            "filesize": 59441152,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_16.05.1_MR-1.KVM-139-PRIMARY.qcow2",
+            "version": "16.05.1 MR1",
+            "md5sum": "3d81cf163fb0f4c5c9ba26e92a0ddc13",
+            "filesize": 285671424,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_16.05.1_MR-1.KVM-139-AUXILARY.qcow2",
+            "version": "16.05.1 MR1",
+            "md5sum": "499541728460331a6b68b9e60c8207a3",
+            "filesize": 59441152,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_16.05.0_RC-1.KVM-098-PRIMARY.qcow2",
+            "version": "16.05.1 RC1",
+            "md5sum": "1826ca8a34945de5251876dc3fc7fe63",
+            "filesize": 285736960,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_16.05.0_RC-1.KVM-098-AUXILARY.qcow2",
+            "version": "16.05.1 RC1",
+            "md5sum": "a9c60a65c1e7b5be8369e5ceaeb358f9",
+            "filesize": 59441152,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_16.01.1.KVM-202-PRIMARY.qcow2",
+            "version": "16.01.1",
+            "md5sum": "818d9f973b7a32c50d9b84814c6f1ee3",
+            "filesize": 277479424,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFOS_16.01.1.KVM-202-AUXILARY.qcow2",
+            "version": "16.01.1",
+            "md5sum": "1f6fc0b751aaec9bfd4401b0e0cbc6dc",
+            "filesize": 59441152,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFMOS_15.01.0.KVM-301-PRIMARY.qcow2",
+            "version": "15.01",
+            "md5sum": "a2cb14ed93de1550afef49984b11b56f",
+            "filesize": 706412544,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        },
+        {
+            "filename": "VI-SFMOS_15.01.0.KVM-301-AUXILARY.qcow2",
+            "version": "15.01",
+            "md5sum": "43cf82ac1f7b0eb6550f0e203daa6b96",
+            "filesize": 199168,
+            "download_url": "https://secure2.sophos.com/en-us/products/next-gen-firewall/free-trial.aspx"
+        }
+    ],
+    "versions": [
+        {
+            "name": "18.5.2 MR2",
+            "images": {
+                "hda_disk_image": "VI-18.5.2_MR-2.KVM-380-PRIMARY.qcow2",
+                "hdb_disk_image": "VI-18.5.2_MR-2.KVM-380-AUXILIARY.qcow2"
+            }
+        },
+        {
+            "name": "17.1.3 MR3",
+            "images": {
+                "hda_disk_image": "VI-17.1.3_MR-3.KVM-250-PRIMARY.qcow2",
+                "hdb_disk_image": "VI-17.1.3_MR-3.KVM-250-AUXILARY.qcow2"
+            }
+        },
+        {
+            "name": "17.0.2 MR2",
+            "images": {
+                "hda_disk_image": "VI-SFOS_17.0.2_MR-2.KVM-116-PRIMARY.qcow2",
+                "hdb_disk_image": "VI-SFOS_17.0.2_MR-2.KVM-116-AUXILARY.qcow2"
+            }
+        },
+        {
+            "name": "16.05.4 MR4",
+            "images": {
+                "hda_disk_image": "VI-SFOS_16.05.4_MR-4.KVM-215-PRIMARY.qcow2",
+                "hdb_disk_image": "VI-SFOS_16.05.4_MR-4.KVM-215-AUXILARY.qcow2"
+            }
+        },
+        {
+            "name": "16.05.1 MR1",
+            "images": {
+                "hda_disk_image": "VI-SFOS_16.05.1_MR-1.KVM-139-PRIMARY.qcow2",
+                "hdb_disk_image": "VI-SFOS_16.05.1_MR-1.KVM-139-AUXILARY.qcow2"
+            }
+        },
+        {
+            "name": "16.05.1 RC1",
+            "images": {
+                "hda_disk_image": "VI-SFOS_16.05.0_RC-1.KVM-098-PRIMARY.qcow2",
+                "hdb_disk_image": "VI-SFOS_16.05.0_RC-1.KVM-098-AUXILARY.qcow2"
+            }
+        },
+        {
+            "name": "16.01.1",
+            "images": {
+                "hda_disk_image": "VI-SFOS_16.01.1.KVM-202-PRIMARY.qcow2",
+                "hdb_disk_image": "VI-SFOS_16.01.1.KVM-202-AUXILARY.qcow2"
+            }
+        },
+        {
+            "name": "15.01",
+            "images": {
+                "hda_disk_image": "VI-SFMOS_15.01.0.KVM-301-PRIMARY.qcow2",
+                "hdb_disk_image": "VI-SFMOS_15.01.0.KVM-301-AUXILARY.qcow2"
+            }
+        }
+    ]
+}

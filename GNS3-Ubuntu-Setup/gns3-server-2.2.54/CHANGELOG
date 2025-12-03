@@ -1,0 +1,2379 @@
+# Change Log
+
+## 2.2.54 21/04/2025
+
+* Bundle web-ui v2.2.54
+* Add new method to find the IP address of a VBox GNS3 VM + allow NAT Network
+* Add edk2-stable202502 UEFI firmwares and try to first use firmwares from the ovmf package if installed. Fixes #2494
+* Try to detect swtpm and AppArmor issue. Ref https://github.com/GNS3/gns3-gui/issues/3725
+* Fix Docker logs decoding. Ref #2522
+* Add delay after starting a Docker container and adding connections in uBridge. Ref #2522
+* Fix TypeError when reading Docker container logs. Ref #2522
+* Replace "Docker hub" by "Docker repository" because it is possible to use different repositories
+* Upgrade dependencies
+* Improvements for remote-install.sh
+
+
+## 2.2.53 21/01/2025
+
+* Bundle web-ui v2.2.53
+* Add more information when patching .vbox file. Ref https://github.com/GNS3/gns3-gui/issues/3542
+* Increase timeout to run compute HTTP queries. Fixes #2461
+* Use 'allow_methods="*"' in aiohttp_cors.ResourceOptions(). Fixes #2459
+* Upgrade dependencies
+* Update remote-install.sh to support a custom repository and the deb822 source format
+* Fix: do not use the iourc file if IOU licence check is not enabled
+
+
+## 2.2.52 02/12/2024
+
+* Bundle web-ui v2.2.52
+* Remove restrictions based on file extension when listing images and fix ELF header checks
+* Fix use project name instead of ID for fast duplication when running local server. Fixes #2446
+* Overwrite user resources when the originals have changed.
+* Relax setuptools requirement to allow for easier Debian packaging on Ubuntu Focal & Jammy
+
+## 2.2.51 07/11/2024
+
+* Catch error when cannot resize Docker container TTY.
+* Do not use "ide" if there is a disk image and no interface type has been explicitly configured.
+* Use @locking when sending uBridge commands. Ref https://github.com/GNS3/gns3-gui/issues/3651
+* Fix run Docker containers with user namespaces enabled. Fixes #2414
+* Python 3.13 support
+* Upgrade dependencies
+* Fix errors in init.sh. Fixes #2431
+
+## 2.2.50 21/10/2024
+
+* Bundle web-ui v2.2.50
+* Symbolic links support for project export/import
+* Add comment to indicate sentry-sdk is optional. Ref https://github.com/GNS3/gns3-server/issues/2423
+* Fix issues with recent busybox versions
+* Support to reset MAC addresses for Docker nodes and some adjustments for fast duplication.
+* Update README.md to change the minimum required Python version.
+* Faster project duplication for local projects (no remote compute)
+* Improve error message when a project cannot be parsed.
+* Fix for running Docker containers with user namespaces enabled
+* Support for configuring MAC address in Docker containers
+* Upgrade aiohttp to v3.10.3
+
+## 2.2.49 06/08/2024
+
+* Bundle web-ui v2.2.49
+* Forbid -nic and -nicdev in Qemu additional options. Fixes https://github.com/GNS3/gns3-server/issues/2397
+* Upgrade jsonschema and sentry-sdk packages
+* Update IOU base configs to use "no ip domain lookup". Fixes #2404
+
+## 2.2.48.1 12/07/2024
+
+* Bundle web-ui v2.2.48.1
+
+## 2.2.48 08/07/2024
+
+* Bundle web-ui v2.2.48
+* Add 'install_builtin_appliances' and 'resources_path' settings in the server config
+* Option to keep the compute IDs unchanged when exporting a project
+* Forbid unsafe Qemu additional options
+* Fix error when snapshot exists with an underscore in the name
+* Upgrade sentry-sdk, psutil and aiofiles packages
+* Fix check for IPv6 enabled on host
+
+## 2.2.47 15/05/2024
+
+* Fix update-bundled-web-ui.sh script
+* Bundle web-ui v2.2.47
+* Change sentry-sdk version
+* Upgrade aiohttp, sentry-sdk and truststore
+* Upgrade jsonschema and aiohttp
+* Drop Python 3.7
+* Remove dev requirements for Python 3.6
+* Do not run Docker VM tests on Windows
+* Do not wait for the server to close when shutting down.
+* Fix test create image with not supported characters by filesystem. Fixes #2375
+* Allow listing x86_64 IOU images. Fixes #2376
+* Upgrade Jinja2 to version 3.1.4. Fixes #2378
+* Fix link capture for ATM switch. Fixes https://github.com/GNS3/gns3-gui/issues/3570
+* Fix tests after updating error message when busybox is not installed.
+* Add more details to error message when busybox is not installed. Fixes https://github.com/GNS3/gns3-gui/issues/3569
+* Fix invalid escape sequences
+* Add NAT symbols
+* Fix cannot stop Docker VM while console connection is still active.
+* Upgrade sentry-sdk to version 1.40.6
+
+## 2.2.46 26/02/2024
+
+* Bundle web-ui v2.2.46
+* Save empty directories when exporting a project
+* Backport from v3: install Docker resources in a writable location at runtime.
+* Use Docker API v1.24 to get version.
+* Drop support for Python 3.6
+* Address the telnet console bug.
+* Update welcome.py
+* Update remote-install.sh
+* Use Python 3.8 to publish API doc
+* Upgrade sentry-sdk, psutil and distro dependencies
+
+## 2.2.45 12/01/2024
+
+* Bundle web-ui v2.2.45
+* Fix mouse offset issues with VNC in Qemu. Fixes #2335
+* Add project.created, project.opened and project.deleted controller notification stream. Move project.updated and project.closed from project notification to controller notification stream.
+* Do not stop searching for Qemu binaries if one binary cannot be executed. Ref #2306
+* Fix Ethernet switch and Ethernet hub port validations. Fixes #2334
+* Update CORS policy
+* Add custom executable paths on Windows
+* Upgrade sentry-sdk and aiohttp
+
+## 2.2.44.1 07/11/2023
+
+* Catch exceptions when computing image checksums. Ref https://github.com/GNS3/gns3-server/issues/2228
+* Add freeze_support() for multiprocessing
+
+## 2.2.44 06/11/2023
+
+* Bundle web-ui v2.2.44
+* Non-blocking checksums computation when server starts. Fixes #2228
+* Fix timeout issue when creating Qemu disk image. Fixes https://github.com/GNS3/gns3-server/issues/2313
+* Support for web socket console over HTTPS
+* Add back script create_cert.sh
+* Allow disabling hardware virtualization check
+* Fix L2IOU "failed code signing checks" when IOU base file name is >= 63 characters
+* Change "ip cef" to "no ip cef" in IOU default configs. Fixes #2298
+* Add Qemu IGB network device
+* Add Python 3.12 support.
+* Fix issue with importlib.resources.files() and Python 3.9
+
+## 2.2.43 19/09/2023
+
+* Force English output for VBoxManage. Fixes #2266
+* Automatically add vboxnet and DHCP server if not present for VirtualBox GNS3 VM. Ref #2266
+* Fix issue with controller config saved before checking current version with previous one
+* Prevent X11 socket file to be modified by Docker container
+* Use the user data dir to store built-in appliances
+* Catch ConnectionResetError exception when client disconnects
+* Upgrade to PyQt 5.15.9 and pywin32
+
+## 2.2.42 09/08/2023
+
+* Bundle web-ui v2.2.42
+* Handle API version key in VirtualBox 7. Fixes #2266
+* Enable system certificate store for SSL connections
+* Use DEFAULT_BUFFER_SIZE for md5sum
+* Fix version check when installing appliances. Ref https://github.com/GNS3/gns3-gui/issues/3486
+* Allow connection to ws console over IPv6. Fixes https://github.com/GNS3/gns3-web-ui/issues/1400
+* Support for Python 3.12
+* Remove import urllib3 and let sentry_sdk import and patch it. Fixes https://github.com/GNS3/gns3-gui/issues/3498
+
+## 2.2.41 12/07/2023
+
+* Bundle web-ui v2.2.41
+* Catch urllib3 exceptions when sending crash report. Ref https://github.com/GNS3/gns3-gui/issues/3483
+* Only fetch Qemu version once when starting Qemu + only add speed/duplex for virtio-net-pci with Qemu version >= 2.12
+* Use recent OVMF firmware (stable-202305) and use flash drives to configure Qemu command line
+* Remove the useless executable permissions to the file gns3server/disks/empty8G.qcow2
+* Backport UEFI boot mode support for Qemu VMs
+
+## 2.2.40.1 10/06/2023
+
+* Re-bundle Web-Ui v2.2.40. Fixes #2239
+
+## 2.2.40 06/06/2023
+
+* qemu : with network adapter_type equal to "virtio-net-pci", fix the speed to 10000 and duplex to full. 	The values are actually fake. 	(https://github.com/GNS3/gns3-gui/issues/3476)
+* Parse name for request to node creation from template
+* Remove Xvfb + x11vnc support
+* Require a Host-Only Network to start the VirtualBox GNS3 VM on macOS with VirtualBox 7
+* Properly catch aiohttp client exception. Ref #2228
+* Catch ConnectionResetError when waiting for the wrap console
+* Fix open IPv6 address for HTTP consoles on controller. Fixes https://github.com/GNS3/gns3-gui/issues/3448
+* Use proc.communicate() when checking for subprocess output As recommended in https://docs.python.org/3/library/asyncio-subprocess.html#asyncio.subprocess.Process.stderr
+
+## 2.2.39 08/05/2023
+
+* Install web-ui v2.2.39
+* Add generic function to install resource files
+* Install empty Qemu disks on first start
+* Check for colon in project name. Fixes #2203
+* Upgrade distro and aiohttp dependencies
+
+## 2.2.38 28/02/2023
+
+* Bundle web-ui v2.2.38
+* Fix c7200_i0_log.txt is created in the current directory. Fixes #2191
+* Check swtpm version and start swtpm before qemu
+* Fix broken websocket console with Python 3.11
+* Fix "cannot reopen console". Ref #2182
+* Fix Qemu binary not set when adding appliance from template
+
+## 2.2.37 25/01/2023
+
+* Fix link communication issues on Windows with uBridge
+* Fix StreamWriter doesn't have the wait_closed() method in Python3.6. Fixes #2170
+* Install built-in appliances when no previous version has been detected. Fixes #2168
+* Update documentation to install gns3-server. Fixes #2124
+* Give udhcpc executable right. Fixes #2159
+
+## 2.2.36 04/01/2023
+
+* Install web-ui v2.2.36
+* Add Trusted Platform Module (TPM) support for Qemu VMs
+* Require Dynamips 0.2.23 and bind Dynamips hypervisor on 127.0.0.1
+* Delete the built-in appliance directory before installing updated files
+* Use a stock BusyBox for the Docker integration
+* Overwrite built-in appliance files when starting a more recent version of the server
+* Fix reset console. Fixes #1619
+* Only use importlib_resources for Python <= 3.9. Fixes #2147
+* Support when the user field defined in Docker container is an ID. Fixes #2134
+
+## 2.2.35.1 10/11/2022
+
+* Re-release Web-Ui v2.2.35
+
+## 2.2.35 08/11/2022
+
+* Release web-ui v2.2.35
+* Fix issues with VMnet interface on macOS >= 11.0. Ref #3381
+* Use importlib_resources instead of pkg_resources and install built-in appliances in config dir.
+* Fix console vnc don't use configured ports in some case. Fixes #2111
+* Add missing VMware settings in gns3_server.conf
+* Make version PEP 440 compliant
+* Support for Python 3.11
+* Allow for more dependency versions at patch level
+* Replace deprecated distro.linux_distribution() call
+* Update gns3.service.systemd
+* gns3.service.openrc: make openrc script posix compliant
+* fix: use exact match to find interface in windows to avoid get wrong interface
+
+## 2.2.34 28/08/2022
+
+* Use original $PATH in init.sh for Docker containers. Ref #2069
+* Support pytest-asyncio 0.19.0
+* Upgrade dev dependencies and fix issues after upgrading to pytest-aiohttp v1.0.4
+* Update compute.py
+
+## 2.2.33.1 21/06/2022
+
+* Add missing file for web-ui v2.2.33
+
+## 2.2.33 20/06/2022
+
+* Release web-ui v2.2.33
+* Upgrade sentry-sdk and psutil
+* Remove parameter "Name" not useful to create a Docker container
+* Support to reset all console connections. Ref https://github.com/GNS3/gns3-server/issues/1619
+* Config option to disable built-in templates
+* Add hostname entry to sample network config for Docker nodes. Fixes #2039
+* Run Xtigervnc with MIT-SHM extension disabled for Docker VNC console support. Fixes #2071
+* Added OpenRC init script
+
+## 2.2.32 27/04/2022
+
+* Docker: load custom interface files from /etc/network/interfaces (commented by default). Ref #2052
+* Release web UI 2.2.32
+* Create `/etc/network/interfaces.d` in Docker container. Fixes #2052
+* Prettify Docker '/etc/network/interfaces' file. Ref #2040
+* Use public DSNs for Sentry
+* Fix VMware Fusion VM does not start on macOS >= 11. Fixes #2027
+* Include conf file in MANIFEST.in Ref #2044
+* Use Python 3.7 to publish API documentation
+* Development on 2.2.32dev1
+
+## 2.2.31 26/02/2022
+
+* Install setuptools v59.6.0 when using Python 3.6
+
+## 2.2.30 25/02/2022
+
+* Support GNS3 variables in Docker environment variables. Fixes #2033
+* Release web UI 2.2.30
+* Set setuptools to v60.6.0
+* qemu_vm.py Linked node test.
+* Fix dead link in README.rst Fixes #2022
+
+## 2.2.29 08/01/2022
+
+* Release web UI 2.2.29
+* Add NixOS in list of distributions with a package
+
+## 2.2.28 15/12/2021
+
+* Fix compute Docker test. Fixes #2003
+* Release web UI 2.2.28
+* Simpler Systemd service file. Ref #1996
+
+## 2.2.27 12/11/2021
+
+* Release web UI 2.2.27
+* Fix unhandled KeyError exception when starting Docker container. Ref #1991
+
+## 2.2.26 08/10/2021
+
+* Release web UI 2.2.26
+* Sort symbols by theme. Fixes https://github.com/GNS3/gns3-gui/issues/3230
+* Fix memory percentage left warning. Fixes #1966
+* Update affinity symbols. Fixes https://github.com/GNS3/gns3-gui/issues/3232
+
+## 2.2.25 14/09/2021
+
+* Release web UI 2.2.25
+* Fix issue preventing to use custom nested symbols. Fixes #1969
+* Updated affinity symbols
+* Fix qemu-img rebase code to support Qemu 6.1. Ref https://github.com/GNS3/gns3-server/pull/1962
+* Reinstate qemu-img rebase
+* Return disk usage for partition that contains the default project directory. Fixes #1947
+* Explicitly require setuptools, utils/get_resource.py imports pkg_resources
+
+## 2.2.24 25/08/2021
+
+* Release web UI 2.2.24
+* Fix issue when searching for image with relative path. Fixes #1925
+* Fix wrong error when NAT interface is not allowed. Fixes #1943
+* Fix incorrect Qemu binary selected when importing template. Fixes https://github.com/GNS3/gns3-gui/issues/3216
+* Fix error when updating a link style. Fixes https://github.com/GNS3/gns3-gui/issues/2461
+* Some fixes for early support for Python3.10 The loop parameter has been removed from most of asyncio‘s high-level API following deprecation in Python 3.8.
+* Early support for Python3.10 Fixes #1940
+* Bump pywin32 from 300 to 301
+
+## 2.2.23 05/08/2021
+
+* Release web UI 2.2.23
+* Fix hostname inconsistencies during script execution
+* Add option `--without-kvm`
+* Add a `reload` server endpoint. Fixes #1926
+* Handle -no-kvm param deprecated in Qemu >= v5.2
+* Fix binary websocket access to the console
+* Change how to generate random MAC addresses
+* setup.py: prevent installing tests directory
+* Support cloning of encrypted qcow2 base image files
+* Fix VMware VM support on Linux and Windows. Fixes #1919
+
+## 2.2.22 10/06/2021
+
+* Fix VMware support on macOS BigSur
+* Link style support. Fixes https://github.com/GNS3/gns3-gui/issues/2461
+* Release web UI version 2.2.22
+* Preserve auto_start/auto_open/auto_close when restoring snapshot
+* Fix uBridge errors for cloud nodes not visible in logs. Fixes #1895
+* Prevent directory traversal. Fixes #1894
+
+## 2.2.21 10/05/2021
+
+* Release Web-Ui v2.2.21
+* Improvements for get symbol dimensions endpoint. Ref #1885
+
+## 2.2.20 09/04/2021
+
+* Release Web UI version 2.2.20
+* Fix packet capture with HTTPS remote server. Fixes #1882
+* Sync appliance files and remove old ones after sync with online repo. Fixes #1876
+* Upgrade dependencies
+* Fix export for missing files
+* Fix issue when trying to export temporary Dynamips files.
+
+## 2.2.19 05/03/2021
+
+* Launch projects marked for auto open after SIGHUP is received
+* Release Web UI 2.2.19
+* Fix console type error when creating Ethernet switch node. Fixes #1873
+* Upgrade Jinja to version 2.11.3. Fixes #1865
+
+## 2.2.18 16/02/2021
+
+* SIGHUP: remove projects with an empty project directory.
+* Release Web UI 2.2.18
+* Catch OSError exception in psutil. Fixes https://github.com/GNS3/gns3-gui/issues/3127
+* Expose 'auto_open' and 'auto_start' properties in API when creating project. Fixes https://github.com/GNS3/gns3-gui/issues/3119
+* Add mtools package information. Ref https://github.com/GNS3/gns3-gui/issues/3076
+* Fix warning: 'ide-drive' is deprecated when using recent version of Qemu. Fixes https://github.com/GNS3/gns3-gui/issues/3101
+* Fix bug when starting of vpcs stopped with "quit". Fixes https://github.com/GNS3/gns3-gui/issues/3110
+* Fix WinError 0 handling
+* Stop uBridge if VPCS node has been terminated. Ref https://github.com/GNS3/gns3-gui/issues/3110
+* Allow cloned QEMU disk images to be resized before the node starts, by cloning the disk image in response to a resize request instead of waiting until the node starts.
+* Fix(readme): update python version from 3.5.3 to 3.6
+* Use HDD disk image as startup QEMU config disk
+* Create config disk property false by default for Qemu templates
+* Set default disk interface type to "none".
+* Add explicit option to automatically create or not the config disk. Off by default.
+* QEMU config disk support
+
+
+## 2.2.17 04/12/2020
+
+* Close and remove projects deleted from disks after SIGHUP signal is received.
+* Release Web Ui 2.2.17
+* New config file options to configure the VNC console port range.
+* Use asyncio.all_tasks instead of deprecated method for Python 3.9 compatibility.
+
+## 2.2.16 05/11/2020
+
+* Option to allocate or not the vCPUs and RAM settings for the GNS3 VM. Fixes https://github.com/GNS3/gns3-gui/issues/3069
+* Release Web UI version 2.2.16
+* Fix wrong defaults for images_path, configs_path, appliances_path. Fixes #1829
+* Use EnvironmentFile for Systemd service. Ref https://github.com/GNS3/gns3-gui/issues/3048
+* Fix SSL support for controller and local compute. Fixes #1826
+* Prevent WIC to be added/removed while Dynamips router is running. Fixes https://github.com/GNS3/gns3-gui/issues/3082
+* Fix bug with application id allocation for IOU nodes. Fixes #3079
+* Allow commas in image paths and VM name for Qemu VMs. Fixes https://github.com/GNS3/gns3-gui/issues/3065
+
+## 2.2.15 07/10/2020
+
+* Fix symbol retrieval issue. Ref #1824
+* Fixes update() missing 2 required positional arguments: 'name' and 'value'. Fixes #1821 #1825
+* Fix Hyper-V based GNS3 VM WMI issue. Fixes #1822
+* Release Web-Ui version 2020.4.0-beta.1
+
+## 2.2.14 14/09/2020
+
+* Release Web-Ui version 2020.3.0-beta.4
+* Add '-smp sockets=1' by default for Qemu VMs. Ref https://github.com/GNS3/gns3-gui/issues/3047
+* Implement full restart if user reload a Qemu VM which has been updated. Fixes https://github.com/GNS3/gns3-gui/issues/3038
+
+## 2.2.13 04/09/2020
+
+* Release Web-Ui 2020.3.0-beta.3
+* Fix issue when resuming Qemu VM. Fixes https://github.com/GNS3/gns3-gui/issues/3027
+
+## 2.2.12 07/08/2020
+
+* Release Web-Ui version 2020.3.0-beta.2
+* Catch exception when psutil returns OSError
+* Downgrade psutil to version 5.6.7
+* Use parent directory as working directory for project duplication and snapshots. Fixes https://github.com/GNS3/gns3-gui/issues/2909
+* Fix Key Error "vendor_id" is missing when configuring GNS3 VM with VirtualBox. Fixes https://github.com/GNS3/gns3-gui/issues/3018
+
+## 2.2.11 09/07/2020
+
+* Fix crash when project sets 'auto_open' option and a remote GNS3 VM is used. Fixes https://github.com/GNS3/gns3-gui/issues/3014
+* Fix Dynamips ghost image support when project contains a space. Fixes #3015
+* Release Web-Ui version 2020.3.0-beta.1
+* Fix issue when cannot skip slots for Dynamips routers. Fixes https://github.com/GNS3/gns3-gui/issues/3000
+* Allow tests to be run by root. Fixes #1784
+* Update classifiers in setup.py
+
+## 2.2.10 18/06/2020
+
+* Add pytest-aiohttp to tests_require in setup.py
+* Don't require hardware acceleration. Fixes #1780
+* Release Web-Ui version 2020.2.0-beta.5
+* Tests can be run with Python 3.8
+* Wait longer for x11 socket file to be created. Ref #1761
+* Allow Hyper-V to run on AMD when Windows 10 build 19640 or later is detected. Fixes #1777
+* Show error message if IPv6 is not enabled when using SPICE console. Fixes #1772
+* Move jsonschema 2.6.0 requirement in build repository.
+* Only use jsonschema 2.6.0 on Windows and macOS.
+* Disable default integrations for sentry sdk.
+* Remove unused bytes2human function.
+
+## 2.2.9 04/06/2020
+
+* Release Web-Ui version 2020.2.0-beta.4
+* Support to activate/deactive network connection state replication in Qemu.
+* Possible fix for problem connecting to the GNS3 VM. Ref https://github.com/GNS3/gns3-gui/issues/2969 #1760
+* Option to reset or not all MAC addresses when exporting or duplicating a project.
+* Fix bug when changing properties for closed project. Fixes #1754
+* Fix issues with crash reporting & bump version to 2.2.9dev2. Ref https://github.com/GNS3/gns3-server/issues/1758
+* Lock listing VMs. Ref #1755
+* Try to fix error when listing Hyper-V VMs. Ref #1755
+* Catch VirtualBox errors when listing VMs. Fixes #1759
+* Deprecate running with Python 3.5
+* aiocontextvars is only necessary for Python < 3.7
+* Replace Raven by Sentry SDK. Fixes https://github.com/GNS3/gns3-server/issues/1758
+* Require setuptools>=17.1 in setup.py. Ref https://github.com/GNS3/gns3-server/issues/1751 This is to support environmental markers. https://github.com/pypa/setuptools/blob/master/CHANGES.rst#171
+
+## 2.2.8 07/05/2020
+
+* Release Web-Ui 2020.2.0-beta.3
+* Default port set to 80 for server running in the GNS3 VM. Fixes #1737
+* Make the Web UI the default page. Ref https://github.com/GNS3/gns3-server/issues/1737
+* Support controller reloading for templates, appliances and projects. Ref #1743
+* Return exit status 1 if server fails to start. Fixes #1744
+* Use Environmental Markers to force jsonschema version. Fixes https://github.com/GNS3/gns3-gui/issues/2849 Version 3.2.0 with Python >= 3.8 Version 2.6.0 with Python < 3.8
+* Use Environmental Markers to force jsonschema version 2.6.0 on Windows/macOS. Ref https://github.com/GNS3/gns3-gui/issues/2849
+* Implement a minimum interval between cpu_percent() calls. Fixes #1738
+* Add clipboard support for TigerVnc
+* Sort snapshots by (created_at, name)
+* Unprotected access for websocket consoles. Ref https://github.com/GNS3/gns3-gui/issues/2883#issuecomment-580677552
+* Support for WebSocket consoles
+* Return array for controller statistics endpoint
+* Server statistics implementation
+
+## 2.2.7 07/04/2020
+
+* Release 2020.2.0-beta.1
+* Fix uBrigde error popups when Docker image has stopped. Fixes https://github.com/GNS3/gns3-gui/issues/2957
+* Fix warning that you are explicitly comparing literals
+
+## 2.2.6 26/03/2020
+
+* Remove --local when starting Docker dev server.
+* Release 2020.1.0-alpha.1
+* Monitor ubrige processes.
+* Add Xvnc command to the VNC servers list. Fixes #172
+* Allow controller to reconnect to compute if communication is lost. Ref #1634
+* Improvement of support for docker USER directive. Fixes #1727.
+* Fix cannot delete Dynamips router the content of the "usage" field. Fixes https://github.com/GNS3/gns3-gui/issues/2947
+* Prevent locked drawings to be deleted. Fixes https://github.com/GNS3/gns3-gui/issues/2948
+* Fix issues with empty project variables. Fixes https://github.com/GNS3/gns3-gui/issues/2941
+* Upgrade psutil to version 5.6.6 due to CVE-2019-18874 https://github.com/advisories/GHSA-qfc5-mcwq-26q8
+* Remove 'format=raw' from the Qemu options of the disk interfaces. Ref #1699
+* Allocate application IDs for IOU nodes on the controller. An application ID is used by IOU to generate its interface Mac addresses. They must be unique across all opened projects sharing the same computes to avoid Mac address collisions.
+* Require VirtualBox >= 6.0 on AMD and >= 6.1 on Intel processors (for GNS3 VM only). Fixes #1610
+* Add nvme disk interface and fix scsi disk interface for Qemu VMs.
+* Disallow using "legacy networking mode" with Qemu >= 2.9.0
+* Add latest Qemu nic models.
+* Attempt to fix error when loading wmi module. Fixes #1712
+* Handle "aborted" state for VirtualBox VMs. Fixes #1702
+* Change how Hyper-V VMs are found. Ref #1612
+
+## 2.2.5 09/01/2020
+
+* No changes
+
+## 2.2.4 08/01/2020
+
+* Accept a node name when creating a node from a template using the API. Fixes #1708
+* Disallow to modify a template if changes cannot be written on disk. Fixes #1695
+* Fix renaming IOL hostname replaces %h only in a single place. Fixes #1707
+* Add symbols_path
+* Bundle Web Ui version 2019.2.0-alpha.11
+* Change the default UDP port range to be 20000 to 30000 in gns3_server.conf Ref #1271
+* Fix cannot power on VirtualBox VM in saved state. Ref #1702
+
+## 2.2.3 12/11/2019
+
+* Improved how the path to the config file is actually determined
+* Return HTTP status code 204 in API when project successfully closed. Fixes #1689
+* Python3.8 support. Ref https://github.com/GNS3/gns3-gui/issues/2895
+* Make sure still support Python >= 3.5.3
+* Added workaround for #1690. Added venv/ to .gitignore
+* Fix exception when adding VirtualBox VM. Fixes #1685.
+* Set psutil to version 5.6.3 in requirements.txt
+* Add `LimitNOFILE=16384` to GNS3 service. Ref #1678
+* Change the default UDP port range to be 20000 to 30000. Ref #1271
+
+## 2.2.2 04/11/2019
+
+* Release 2019.2.0-alpha.10
+* Fix how PCI bridges are created for Qemu VMs with greater than 32 interfaces.
+* Fix broken support for cloned VirtualBox VMs. Fixes https://github.com/GNS3/gns3-gui/issues/2889
+* Handle builtin entry does not exist when adding node from template (new fix).
+* Let systemd directly supervises the GNS3 service. Fixes #1678
+
+## 2.2.1 01/11/2019
+
+* Handle builtin entry does not exist when adding node from template.
+* Upgrade aiohttp to version 3.6.2
+* Fix issue when linking to more than one NAT node with allowed_interface option enabled. Fixes #1671
+* Prevent deleting a GNS3 project outside the project directory. Ref #1669
+* Do not send "console_type" property to computes for all builtin nodes excepting Ethernet switches. Fixes https://github.com/GNS3/gns3-gui/issues/2882
+* Fix QEMU link detection flaky on last port. Fixes #1666
+* Use compatible shlex_quote to handle case where Windows needs double quotes around file names, not single quotes. Ref https://github.com/GNS3/gns3-gui/issues/2866
+* Use 0.0.0.0 by default for server host. Fixes https://github.com/GNS3/gns3-server/issues/1663
+* Improvement to validate HTTP authentication config. Ref #1662
+* Use versioned config directory for profiles. Fixes #1664
+* Enable nested hardware virtualization by default for GNS3 VM running in VirtualBox. Fixes #1377 No error is sent by VBoxManage is this feature is not available, for instance with Intel processors.
+* Set default host to "localhost". Fixes https://github.com/GNS3/gns3-server/issues/1663
+* Improve process to get guest IP address from GNS3 VM running in VMware workstation/player. Ref https://github.com/GNS3/gns3-gui/issues/2866
+* Fix error with console type in Ethernet switch schema. Fixes #1659
+
+## 2.2.0 30/09/2019
+
+* Add debug message for what directory is checked for Qemu binaries. Ref #1655
+* Release 2019.2.0-alpha.8
+* Fix single quote is not closed. Fixes #1654
+* Fix wrong Dynamips command used to rename an ATM switch. Fixes #1651
+* Don't specify the PCI bus for AHCI device
+* Add id value to all Qemu drives
+
+## 2.2.0rc5 09/09/2019
+
+* Fix AttributeError: Cannot set attribute '%s'. Fixes #1646
+
+## 2.2.0rc4 30/08/2019
+
+* Release 2019.2.0-alpha.7
+* Check that vcpus value for GNS3 VM is an integer. Fixes #1636
+* Make x,y optional for creating links via API. Fixes #1630
+* Set default_name_format for some builtin nodes.
+* Allow "none" for compute_id in templates.
+
+## 2.2.0rc3 12/08/2019
+
+* Revert to jsonschema 2.6.0 due to packaging problem.
+
+## 2.2.0rc2 10/08/2019
+
+* Bump jsonschema to version 3.0.2
+* List Hyper-V VMs on non-english OSes. Fixes #1612
+* Add missing default values in Cloud schema.
+* Release 2019.2.0-alpha.5
+* Fix redirection to web-ui bundled server
+
+## 2.2.0b4 11/07/2019
+
+* Requires a project to be opened to start/stop/suspend all nodes. Fixes #1609
+* Fix issue when starting GNS3 VM for Hyper-V
+* Set defaults for custom cloud nodes.
+* Fix issue when trying to rename a Dynamips node that is already powered on. Fixes #2824
+* Remove deprecated Qemu parameter to run legacy ASA VMs. Fixes #2827
+* Add debug message when searching for an image. Ref https://github.com/GNS3/gns3-gui/issues/2828
+
+## 2.2.0b3 15/06/2019
+
+* Fix template migration issues from GUI to controller. Fixes https://github.com/GNS3/gns3-gui/issues/2803
+* Refresh mounted media after ISO switch.
+* Resolve conflicts in docker volumes instead of error. Fixes https://github.com/GNS3/gns3-server/issues/1595
+* %guest-cid% variable implementation for Qemu VMs. Fixes https://github.com/GNS3/gns3-gui/issues/2804
+* Fix KeyError: 'usage' exception when configuring IOU template. Fixes https://github.com/GNS3/gns3-gui/issues/2806
+
+## 2.2.0b2 29/05/2019
+
+* Ignore Unicode errors when reading base config file contents.
+* Sync appliances.
+* Support snapshots for portable projects. Fixes https://github.com/GNS3/gns3-gui/issues/2792
+* Update the GNS3 version in topology file if converted. Ref https://github.com/GNS3/gns3-gui/issues/2798
+* Support for log rotation and compression. Fixes #1586
+* Do not start QEMU console if QEMU process is not started. Fixes https://github.com/GNS3/gns3-gui/issues/2712
+* Avoid sending warning message all the time for Ethernet switch.
+* Support to include snapshots in portable projects.
+
+## 2.1.20 29/05/2019
+
+* Ignore Unicode errors when reading base config file contents.
+
+## 2.1.19 28/05/2019
+
+* Sync appliances.
+* Remove yarl from requirements.txt since it is installed by aiohttp.
+* Drop typing dependency.
+
+## 2.1.18 22/05/2019
+
+* Revert "Force aiohttp version to 2.3.10 and aiohttp-cors version to 0.5.3" Ref https://github.com/GNS3/gns3-server/issues/1583 Ref https://github.com/GNS3/gns3-server/issues/1592
+* Fix invalid reStructuredText for long description in setup.py
+
+## 2.2.0b1 21/05/2019
+
+* Upgrade GNS3 Web UI to v2019.2.0-alpha.3
+* Change behavior when an IOU license is verified. Fixes https://github.com/GNS3/gns3-server/issues/1555
+* Fix Qemu VM state support after closing a project and check for JSON data returned by qemu-img. Fixes #1591
+* Ensure Qemu monitor commands are executed. Ref #1582.
+* Set console type to "none" by default for Ethernet switches and add a warning if trying to use "telnet". Fixes https://github.com/GNS3/gns3-gui/issues/2776
+* Add %console-port% variable for additional Qemu options. Fixes https://github.com/GNS3/gns3-gui/issues/2786
+* Fix invalid reStructuredText for long description in setup.py
+* Support for additional persistent docker volumes
+
+## 2.2.0a5 15/04/2019
+
+* Back to the major.minor version for config files. Ref https://github.com/GNS3/gns3-gui/issues/2756
+* Fix templates missing after server restart. Fixes https://github.com/GNS3/gns3-gui/issues/2769
+* Fix bug when GNS3 VM were not saved. Fix tests.
+* Some adjustments with compute WebSocket handling. Ref https://github.com/GNS3/gns3-server/issues/1564
+* Fix broken embedded console for Ethernet switch. Fixes #1574
+* Prevent locked nodes to be deleted. Fixes https://github.com/GNS3/gns3-gui/issues/2764
+* Remove old unused argument option. Fixes #1569
+
+## 2.1.17 17/05/2019
+
+* Force aiohttp version to 2.3.10 and aiohttp-cors version to 0.5.3 This is to fix build issue for Ubuntu 19.04 package on Launchpad. Ref #1583 https://github.com/GNS3/gns3-gui/issues/2774
+
+## 2.1.16 15/04/2019
+
+* Fix broken embedded console for Ethernet switch. Fixes #1574
+* Remove old unused argument option. Fixes #1569
+
+## 2.2.0a4 05/04/2019
+
+* Use the full version number for path to config files. Ref https://github.com/GNS3/gns3-gui/issues/2756
+* Support for docker images that set the USER directive. Changes the docker user to root for the init script to configure the network, then drops to the configured user (or root if one is not defined) for continuing booting the image.
+* Fix packet filter not working for Ethernet switch and Ethernet hub. Fixes https://github.com/GNS3/gns3-gui/issues/2754
+* Fix remote packet capture for Dynamips.
+* Fix remote packet capture and make sure packet capture is stopped when deleting an NIO. Fixes https://github.com/GNS3/gns3-gui/issues/2753
+* Store config files in version specific location
+* Update pytest from 4.3.1 to 4.4.0
+* Fix opening previously saved 2.1 project grid overlapping. Fixes #2734
+* Fix empty theme name in symbol selection dialog. Fixes https://github.com/GNS3/gns3-gui/issues/2751
+* Bundle v2019.1.0-alpha.3 web-ui
+
+## 2.2.0a3 25/03/2019
+
+* Fix traceback when starting packet capture on builtin nodes. Fixes https://github.com/GNS3/gns3-gui/issues/2743
+* Load v2019.1.0-alpha.2 of WebUI
+* Fetch tags for update-bundled-web-ui.sh
+* Fix mimetype for javascript, #1559
+* Serve WebUI via get_resource for freezed app
+* Deactivate the embedded shell for Ethernet switch. Ref #1424 #1556
+* Fix VBoxManage fails if VM has specific special characters in name. Fixes #2739
+* Fix IOU symlink issue on remote servers.
+* Fix vcpus configuration for GNS3 VM on VMware. Ref #2738.
+* Fix issue when images are not uploaded from appliance wizard. Ref https://github.com/GNS3/gns3-gui/issues/2738
+* Save the GNS3 VM settings even if the GNS3 VM cannot be stopped.
+* Fix exception when emitting event from controller. Ref https://github.com/GNS3/gns3-gui/issues/2737
+
+## 2.1.15 21/03/2019
+
+* Fix IOU symlink issue on remote servers.
+* Fix vcpus configuration for GNS3 VM on VMware. Ref #2738.
+
+## 2.2.0a2 14/03/2019
+
+* Web-UI v2019.1.0-alpha.1
+* Update docs for update-bundled-web-ui.sh
+* Fix issue when loading and quickly closing a project and opening it again. Fixes #1501.
+* Disable unreliable nested virtualization check.
+* Fix issue not checking build number on Windows.
+* Change Hyper-V requirement checks.
+* Early support for symbol themes.
+* Re-order handlers in order to prevent CORS
+* Download custom appliance symbols from GitHub Fix symbol cache issue. Ref https://github.com/GNS3/gns3-gui/issues/2671 Fix temporary directory for symbols was not deleted Fix temporary appliance file was not deleted
+* Option to export snapshots.
+* Support tags versioned WebUI when bundling
+* Support selecting a compression type when exporting a project.
+* Change how VPCS executable is searched.
+* Use aiofiles where relevant.
+* Update paths for binaries moved to the MacOS directory in GNS3.app
+* Locked state should not be used when duplicating a node.
+* Handle locking/unlocking items independently from the layer position.
+* Use aiozipstream for snapshots. Fix tests.
+* Project duplication support.
+
+## 2.2.0a1 29/01/2019
+
+* Restore reload support for nodes.
+* Tune how to get the size of SVG images. Ref https://github.com/GNS3/gns3-gui/issues/2674. * Default for missing height/width is "100%" as defined in the SVG specification * Better error message, if viewBox attribute is missing * Removal of "%" in percent more fault tolerant by using rstrip("%")
+* Fix DeprecationWarning: invalid escape sequence. Fixes https://github.com/GNS3/gns3-gui/issues/2670
+* Fix issue with coroutine not awaited. Fixes #1499
+* Remove "deprecated" node for VirtualBox based GNS3 VM support. Ref #1377
+* Fix wrong controller method call.
+* Move appliance and template management code in their own classes.
+* Try to delete saved VM state only if a snapshot has been saved.
+* Set socket options SO_KEEPALIVE and TCP_NODELAY for embedded Telnet server. Ref #1335
+* Fix issue with notification queue that prevented to properly close projects. Fix #1493
+* Fix issue with "usage" variable for Dynamips VMs. Fixes #1495
+* New node information dialog to display general, usage and command line information. Ref https://github.com/GNS3/gns3-gui/issues/2662 https://github.com/GNS3/gns3-gui/issues/2656
+* Support "usage" field for Dynamips, IOU, VirtualBox and VMware. Fixes https://github.com/GNS3/gns3-gui/issues/2657
+* Automatically create a symbolic link to the IOU image in the IOU working directory. Fixes #1484
+* Merge remote-tracking branch 'origin/2.1' into 2.1
+* Fix link pause/filters only work for the first interface of Docker containers. Fixes #1482
+* Fix ConnectionResetError issues and switch to aiohttp version 3.4.4. Fixes #1474.
+* Fix server authentication.
+* Fix issue when there is no gns3_controller.conf. Fixes https://github.com/GNS3/gns3-gui/issues/2644
+* Fix non responsive console for Docker VMs. Fixes https://github.com/GNS3/gns3-gui/issues/2645
+* Back to classic symbol theme. Ref https://github.com/GNS3/gns3-gui/issues/2644
+* docker_vm: fix x11vnc not starting
+* Use "template" to name what we use to create new nodes.
+* Use project instead of topology where appropriate.
+* Make sure nothing is named "compute server".
+* Allow usage property in Docker appliance.
+* Use "node" instead of "appliance" for grid support.
+* Telnet console resize support for Docker VM.
+* Allow appliances to be loaded from file without the appliance id.
+* Update schema to allow for drawing grid size to be part of project.
+* Avoid _fix_permissions() to be called twice when stopping Docker VM. Ref #1428
+* Fix _fix_permissions() garbles permissions in Docker VM. Ref #1428
+* Fix "None is not of type 'integer'" when opening project containing a Qemu VM. Fixes #2610.
+* Remove useless warning.
+* Normalize symbol ID on Windows.
+* Use POSIX path for symbol ID.
+* Early support for symbol themes.
+* Fix broken examples in API documentation.
+* Add more information about appliances to the API documentation.
+* Use Python3.6 to build the API documentation.
+* Add missing files for API documentation.
+* Restore previously removed test.
+* Update API documentation for appliance endpoints. Ref https://github.com/GNS3/gns3-gui/issues/2630
+* Require privileged access for uBridge when using VMware VMs and Docker containers. Fixes #1461.
+* Only require privileged access for uBridge when connecting a cloud to an Ethernet/TAP interface. Fixes #1461.
+* Allow virtual machines to use files in project directory as disk images.
+* Support to duplicate an appliance.
+* Fix mac address schema validation for Qemu VM appliance. Fixes https://github.com/GNS3/gns3-gui/issues/2629
+* Support "L1 keepalives" in IOU appliance schema.
+* Remove problematic test when run on Travis.
+* Change test that randomly fails on Travis.
+* Fix small bugs when using the new appliance management API.
+* Fix bug with custom adapters and categories for Docker VM. Fixes https://github.com/GNS3/gns3-gui/issues/2613
+* Handle custom adapters in schemas.
+* Reorganize how appliance creation is validated against JSON schemas. This allows for clearer error messages when validation fails.
+* Use schema to set appliance default values and better schema validation error messages.
+* Schema validation for appliance API. Ref #1427.
+* Remove generic controller settings API endpoint.
+* Working dedicated appliance management API. Ref https://github.com/GNS3/gns3-server/issues/1427
+* Support Xtigervnc restart.
+* Only require Xtigervnc or Xvfb+x11vnc for Docker with vnc console. Ref #1438
+* Support tigervnc in Docker VM. Ref #1438
+* Base for dedicated appliance management API. Ref https://github.com/GNS3/gns3-server/issues/1427
+* Reorder routes in order to get working CORS
+* Fix CORS response on node deletion, Fixes: #1446
+* Disable CORS cache, Fixes: #1445
+* Refactor how clients access PCAP capture files. Fixes https://github.com/GNS3/gns3-gui/issues/2438.
+* Remove static dir configuration
+* FIX PUT CORS for nodes, Fixes: #1434
+* Fix installation with Python 3.7. Fixes #1414. Fix deprecated use of aiohttp.Timeout. Fixes #1296. Use "async with" with aiohttp.ClientSession(). Make sure websocket connections are properly closed, see https://docs.aiohttp.org/en/stable/web_advanced.html#graceful-shutdown Finish to drop Python 3.4.
+* Drop Python 3.4 and switch to async / await syntax for asyncio. Fixes #1425
+* Added "/sbin" to init script PATH variable so that its possible to use more sophosticated dhcp clients (compared to the udhcpc that is provided by busybox) by installing them into the docker image in the normal way.
+* Notify users if x11vnc process has crashed. Fix #1401.
+* Return compute port information via API. Ref #1420.
+* Fix platform.linux_distribution() is deprecated. Fixes https://github.com/GNS3/gns3-gui/issues/2578
+* Update minimum VIX version requirements for VMware. Ref #1415.
+* Disable static directory. Ref https://github.com/GNS3/gns3-gui/issues/2558.
+* Include HTTP error code when reporting an error while download appliance templates from GitHub repository.
+* Optimize appliance templates update from GitHub repository by only downloading when the repository has been updated. Ref https://github.com/GNS3/gns3-gui/issues/2490
+* Fix appliance template tests.
+* Update appliance templates from online registry. Ref #2490.
+* Add missing doc pages.
+* Update docs for controller_notifications and project_notifications.
+* The server has now 2 notification streams * A new one for controller related events (compute, appliance templates etc.) * The existing one for project related events (links, nodes etc.)
+* Allow custom symbols to be sub-directories.
+* Add affinity symbols. Ref https://github.com/GNS3/gns3-gui/issues/2488
+* ACPI shutdown for GNS3 VM running on Hyper-V. Ref https://github.com/GNS3/gns3-gui/issues/763
+* Hyper-V support for GNS3 VM. Fixes https://github.com/GNS3/gns3-gui/issues/763
+* Get IP address from guest Hyper-V VM. Ref https://github.com/GNS3/gns3-gui/issues/763
+* Early Hyper-V support to run the GNS3 VM. Ref https://github.com/GNS3/gns3-gui/issues/763.
+* Add appliance UUID added to the node data. Fixes #1334.
+* Clean GNS3 close if one remote server is down. Fixes #1357.
+* Mark VirtualBox support for running the GNS3 VM as deprecated. Ref #1377.
+* Change default z value for nodes to 1
+* Re-enable static directory
+* Disable static/ dir, Ref: #2532
+* Fix tests on Windows
+* Use mocked dir for web-ui redirection test
+* Use mocked dir of web-ui for tests
+* Gitkeep for web-ui directory
+* Serve WebUI handlers and update-bundled-web-ui script, Ref: #1362
+* Support /static/ files serving, Ref: #1362
+* Console support for clouds (to connect to external devices or services).
+* Fix switching console type from telnet to VNC throws error. Fixes #2489.
+* Fix saved VM state was not deleted correctly.
+* Fix problem with VM saved stated.
+* Returns the ports' adapter types and mac addresses when available.
+* Support for console auto start.
+* Possibility to customize port names and adapter types for Qemu, VirtualBox, VMware and Docker. Fixes #2361. MAC addresses can customized for Qemu as well.
+* Allow to have projects with the same name in different locations.
+* Save state feature for VirtualBox and VMware. New "On close" setting to select the action to execute when closing/stopping a Qemu/VirtualBox/VMware VM.
+* Support for suspend to disk / resume (Qemu).
+* Fix bug with 'none' console type for Ethernet switch. Fix some tests related to traceng.
+* Allow to resize a Qemu VM disk (extend only).
+* Allow to select the default NAT interface in preferences for local server.
+* Spice with agent support for Qemu VMs.
+* Check if the HAXM service is running when starting a Qemu VM with hardware acceleration. Ref #1242.
+* Support for console type "none".
+* Support for none console type (Qemu & Docker only)
+* Fix bug and add optimizations when connecting and sending commands to QEMU monitor after starting a VM. Fixes #2336.
+* Check if HAXM support is installed on macOS. Ref #1242.
+* Fix some issues with hardware acceleration support for Qemu.
+* Support Qemu with HAXM acceleration. Ref #1242.
+* Fix packet filters for Dynamips.
+* Fix link filters/suspend tests.
+* Improve suspend a link for Qemu and VirtualBox VMs. A suspended link will be unplugged allowing the VMs to be notified of the change.
+* Qemu VM support to detect when a link is plugged/unplugged.
+* Allow to configure the interface to be used by the NAT node. Fixes #1175.
+* Restrict the list of available Ethernet/TAP adapters. Fixes #352.
+* Basic project stats.
+* Filter snapshots directory during the snapshot, Fixes: #1297
+* Calculate MD5 on thread and before json response, Ref. gui#2239
+* Cancellable md5sum calculation on thread, Ref. gui#2239
+* Compute md5sum on thread and don't block main server, Ref. gui#2239
+* Replace asyncio.async with ensure_future because of deprecation, Fixes: #1269
+* Implement #1153 into 2.2 branch.
+* Pin prompt-toolkit to latest version 1.0.15
+
+## 2.1.14 27/02/2019
+
+* Fix issue when setting cpuid.corespersocket for the GNS3 VM. Fixes https://github.com/GNS3/gns3-gui/issues/2723
+* Bump ACPI Shutdown Timeout to 120 seconds. Ref #1536
+
+## 2.1.13 26/02/2019
+
+* Force jsonschema dependency to 2.6.0
+* Less aggressive connections to uBridge. Ref #1289
+* Fix topology images (Pictures) disappearing from projects. Fixes #1514.
+* Reset MAC addresses when duplicating a project. Fixes #1522
+* Fix API call to create a node from an appliance doesn't return the new node data. Fixes #1527
+* Detect invalid environment variable and send a warning when creating a Docker node. Ref #2683
+* Do not export/import symlinks for projects. Fixes #2699
+* Fix symlink not being created for duplicated IOU devices. Fixes https://github.com/GNS3/gns3-gui/issues/2699
+* Configure coresPerSocket value in VMX file for the GNS3 VM. Fixes https://github.com/GNS3/gns3-gui/issues/2688
+* Count logical CPUs to detect if the number of vCPUs is too high when configuring the GNS3 VM. Fixes #2688.
+* Add explicit error when trying to pull a Docker image from Docker Hub without Internet access. Fixes #1506.
+* Fixes double display output in GRUB in QEMU v3.1. Fixes #1516.
+
+## 2.1.12 23/01/2019
+
+* Tune how to get the size of SVG images. Ref https://github.com/GNS3/gns3-gui/issues/2674.
+* Automatically create a symbolic link to the IOU image in the IOU working directory. Fixes #1484
+* Fix link pause/filters only work for the first interface of Docker containers. Fixes #1482
+* Telnet console resize support for Docker VM.
+* Fix _fix_permissions() garbles permissions in Docker VM. Ref #1428
+* Fix "None is not of type 'integer'" when opening project containing a Qemu VM. Fixes #2610.
+* Only require Xtigervnc or Xvfb+x11vnc for Docker with vnc console. Ref #1438
+* Support tigervnc in Docker VM. Ref #1438
+* Update minimum VIX version requirements for VMware. Ref #1415.
+
+## 2.1.11 28/09/2018
+
+* Catch some exceptions.
+
+## 2.1.10 15/09/2018
+
+* Include locale information and GNS3 VM version in crash reports.
+* Fix small errors like unhandled exceptions etc.
+* Import encodings.idna to avoid LookupError when standard library is in a zip file.
+* Catch exceptions in various locations to fix small issues reported by Sentry.
+* Check if serial pipe can be opened for VMware and VirtualBox VMs.
+* Improve the invalid port format detection. Fixes https://github.com/GNS3/gns3-gui/issues/2580
+* Update aiohttp verion requirement in order to support Python 3.7. Fixes https://github.com/GNS3/gns3-gui/issues/2566
+* Update setup.py and fix minor issues.
+* Catch asyncio.CancelledError when shutting down the server.
+* Report GNS3 VM errors to the GUI server summary. Ref #1359.
+* Replace vboxnet0 (if it does not exist) by the first available vboxnet interface on Windows. Fixes https://github.com/GNS3/gns3-vm/issues/102
+* Check if the VirtualBox host-only network exists when starting a GNS3 VM running on VirtualBox. Ref https://github.com/GNS3/gns3-vm/issues/102
+* Change file timestamps if necessary because ZIP does not support timestamps before 1980. Fixes #1360.
+* Add missing coroutine decorator Ref https://github.com/GNS3/gns3-gui/issues/2566
+* Refactor asyncio locking system for Python 3.7 support. Ref https://github.com/GNS3/gns3-gui/issues/2566 Ref https://github.com/GNS3/gns3-gui/issues/2568
+* Use asyncio.ensure_future() instead of asyncio.async() with conservative approach to support Python < 3.4.4. Fixes https://github.com/GNS3/gns3-gui/issues/2566
+* Forbid controller and computes to be different versions. Report last compute error to clients and display in the server summary.
+* Fix exception with short names for Dynamips interfaces. Fixes #1386.
+* Add missing Qemu boot priority values. Fixes https://github.com/GNS3/gns3-server/issues/1385
+
+## 2.1.9 13/08/2018
+
+* Fix some more problems with interface short names. Fixes https://github.com/GNS3/gns3-gui/issues/2562
+* Fix incorrect short port names in topology summary. Fixes https://github.com/GNS3/gns3-gui/issues/2562
+* Set lower process priority when computing idle-pc value on Windows. Ref #2522.
+* Catch exception: ZIP does not support timestamps before 1980. Ref #1360.
+* Sync appliances
+
+## 2.1.8 14/06/2018
+
+* 'caplog.text()' syntax is deprecated, use 'caplog.text' property instead.
+* Remove problematic pytest-capturelog dev dependency.
+* Fix API status code for start/stop/suspend/reload a node. Fixes #1353. Fix issues with test. Update documentation.
+* Don't send variables to computes where are empty, Ref: #1340
+
+## 2.1.7 12/06/2018
+
+* Don't release NIO UDP ports when updating docker container.
+* Timeout for stream file.
+* Fix switching console type from telnet to VNC throws error.
+* Fix timeout error with "save as" for large projects.
+* Update API documentation
+* Add API endpoint to return all links attached to a node.
+* Fix issue with some SVG symbols that could not be used in GNS3. This was due to the height and width values being percentages.
+* Show correct free disk space value.
+* Force prompt-toolkit to version 1.0.15
+* Remove unwanted trailing characters and other white spaces when reading .md5sum files.
+* Change order to find vnetlib on Windows (PATH -> Registry -> Default directories).
+
+## 2.1.6 22/05/2018
+
+* Locks down async-timeout<3.0.0 for P3.4 support; Fixes: #1331
+* Create/update project on compute when variables changes
+* Support for nested global variables
+* Don't clean logo images when applied to the project
+* Support of supplier and variables in topology
+* Project global variables
+* Add command information when uBridge has an error. Ref #1289
+* Handle asyncio timeouts. Ref #1307.
+* Fix bug with export project. Ref #1187 #1307.
+* Offload slow file operations to threads for snapshots and project "save as". Ref #1187 #1307.
+*  support based on init.sh, Ref: #2482
+* Fix exception from send_signal() on Windows.
+* Add support of ExtraHosts for Docker, Ref. gns3-gui#2482
+
+## 2.1.5 18/04/2018
+
+* Set the first byte to 0C when generating a random MAC address for a Qemu VM. Ref #1267.
+* Update appliance files.
+* Do not use VMnet0 when allocating VMnet adapters.
+* Use SO_REUSEADDR before calling bind() where missing. Fixes #1289.
+* Do not fail a Dynamips project conversion if a file being used.
+* Catch exceptions when using AsyncioTelnetServer. Fixes #1321.
+* Grid size support for projects.
+* Remove 'include INSTALL' from MANIFEST.
+* Fix issue with start all.
+* Check for valid IP address and prevent to run on non-Windows platforms.
+* Enable UDP tunnel option and use ICMP probing by default.
+* Use the configured IP address to trace.
+* Have TraceNG start without needing cmd.exe
+
+## 2.1.4 12/03/2018
+
+* Add Juniper JunOS space appliance.
+* Sync checkpoint gaia appliance template.
+* Sync appliance templates.
+* Make sure we use an IPv4 address in the remote install script.
+* Delete old pcap file when starting a new packet capture.
+* Fix bug preventing to export portable projects with IOU images.
+* Ignore invalid BPF filters. Ref #1290.
+* Different approach to handle no data returned by uBridge hypervisors. Fixes #1289.
+* Do not raise exception if Dynamips or uBridge hypervisor don't return data and are still running. Fixes #1289
+* Fix Dynamips private config not loaded into nvram when starting a router. Fixes #1313.
+* Make sure we don't try to read when opening a file in binary more. Fixes #1301.
+* Compatybility with controller, default_symbol and hover_symbol, Fixes: #2444
+* Filter snapshots directory during the snapshot, Fixes: #1297
+* Handle docker env with last empty line, Fixes: #2420
+* Require uBridge version 0.9.14 on Linux
+* Pywin32 instead of pypiwin32, Ref. #1276
+* Fix missing 'locales' package in base image
+* Implement a minimum interval between psutil calls. Fixes #2262
+* Fix error when appliance template is broken (missing fields). Fixes #1287.
+* Fix "Change of linked base VM doesn't work with templates migrated from 2.0"
+* Fix "Unable to override non-custom VMware adapter".
+* Let a project be opened when a port cannot be found (can happens if a project is corrupted).
+* Add an error message when Docker container is not ready to be started. Ref #1281.
+* Update documentation.
+* Sync appliance files.
+* Fix issue when running multiple project containing IOU nodes on the same server. Ref #1239.
+* Set first byte to 52 when generating a random MAC address for a Qemu VM. Ref #1267.
+* Update link state and save project when a link is suspended or filters are added/removed (without node properties set).
+* More generic dependency for pypiwin32, Ref. #1276
+
+## 2.1.3 19/01/2018
+
+* Update appliance files.
+* Suspend for Docker nodes.
+* Unlock yarl version and multidict
+* Fix same MAC address for duplicated Qemu nodes.
+* Fix same base MAC for duplicated IOS routers. Fixes #1264.
+* Fix "Creating multiple IOU nodes at once assigns the same application id". Fixes #1239.
+* Fix "Transport selection via DSN is deprecated" message. Sync is configured with HTTPTransport.
+* Refresh CPU/RAM info every 1 second. Ref #2262.
+* Rename ethernet switch arp command to mac
+* Fix error while getting appliance list. Fixes #1258.
+* Fix UnboundLocalError: local variable 'node' referenced before assignment. Fixes #1256.
+* Default symbol must be computer.svg
+* Compatibility for old node templates (those with default_symbol and hover_symbol properties).
+* Fix problem when searching for VBoxManage. Fixes #1261.
+* Improve the search for VBoxManage.
+* Fixing race condition when starting the GNS3 VM.
+* Default VPCS name format is now PC-{0}.
+
+## 2.1.2 08/01/2018
+
+* Do not show log message if configuration file doesn't exist. Fixes #1206.
+* Update API documentation
+* Update API documentation. Fixes #1253.
+* GNS3-API: implement GET for specific drawing and link Fixes #1249
+
+## 2.1.1 22/12/2017
+
+* Protect variable replacement for Qemu options. Escape double quotes.
+* Add proper exception when cannot find tunnel on QEMU, Fixes: #1241
+* Increase timeout for creation of image, Ref. #2239
+* Protect variable replacement for Qemu options.
+* Do not overwrites persistent Docker volumes. Fixes #2358.
+* Allow users to see an error when the server cannot stream a PCAP file.
+* Fix issue with Qemu + SPICE when IPv4 is not enabled.
+* Warn users if the GNS3 VM and local server are not in the same subnet. Fixes #1231.
+* Add missing appliance files.
+* Update appliance files.
+* Fix auto idle-pc from preferences.
+* Keep consistance of aiohttp.web.HTTPForbidden() execution
+* Make sure connected links are removed when a node is deleted.
+* Validate idle-pc values for auto idle-pc feature.
+* Fix error when updating packet filter on stopped Docker link. Fixes #1229.
+* Remotely close telnet console. Ref #2330
+* EthernetSwitch closing connections, Ref: gui/#2330
+* Export files from remote server, Fixes: gui/#2271
+* New option: require KVM. If false, Qemu VMs will not be prevented to run without KVM.
+* Implement variable replacement for Qemu VM options.
+* Avoid duplicate "-nographic" option.
+* Show qemu-img stdout in case of an error.
+* Use the correct NVRAM amount when pushing private config to IOU.
+* Check and fix corrupt Qemu disk images. Fixes #2301.
+* Update warning messages when connecting to non custom adapter for VMware VMs.
+* Fix "Can't use VirtualBox VM when an interface is managed by VirtualBox". Fixes #2335.
+* Add low disk space warning when creating a new project.
+
+## 2.1.0 09/11/2017
+
+* Fix typo in vcpus on VirtualBoxVM, fixes: #1213
+
+## 2.1.0rc4 07/11/2017
+
+* Fix GNS3VM vCPUs control on VMware, fixes: #2324
+* Fix typo in sample gns3_server.conf. Fixes #1210.
+* Warning for getting endpoint of compute
+* Enable debug mode on async loop only in dev/debug mode
+* Add warning when using IOU with a hostname length above 15 characters.
+* Improve VMware VMs discovery process. Ref #1201.
+* Improve error message when IOU VM process is unexpectedly stopped.
+* Improved error message when the number of network adapters is above the maximum for VirtualBox VMs. Better support for potential future chipsets in addition of PIIX3 and ICH9.
+* Added localhost and gns3.github.io CORS
+
+## 2.1.0rc3 19/10/2017
+
+* Set vhv.enable before run for VMWare 14. Fixes #1184
+* Tweak how VMware VMs are found with fallback to search in the default location for VMs.
+* QEMU: fix logging of base mac address when creating a new node
+* Sync appliance files.
+* Fix creation of an VMware VM failed with invalid JSON. Fixes #2282.
+* Endpoint for obtaining direct action on compute
+* Fix IOU detection of layer 1 keepalive support. Fixes #1183.
+* Fixes path normalization during file upload on nodes (Fixes: #2276)
+
+## 2.1.0rc2 04/10/2017
+
+* Don't create directory structure during json dump. Fixes #2270
+* Add more information when qemu-img fails.
+* Fix issue with multidict when upgrading GNS3 VM to use dev channel.
+* Restore file permissions fails for volumes with soft links. Fixes #1180.
+* Use RAW sockets by default on Linux.
+* Add missing https console keyword in JSON schema. Fixes #1179.
+* Allow projects to be opened even when a node port is already used.
+
+## 2.1.0rc1 13/09/2017
+
+* Fix NAT node not working on Windows. Fixes #1163.
+* Do not prevent a project to be deleted. Fixes #2237.
+
+## 2.1.0b2 05/09/2017
+
+* Round-robin nodes across all available compute resources. Fixes #1165.
+* Try to improve error reporting when streaming a PCAP file. Ref #2235.
+* Use Npcap DLL on Windows when checking for uBridge version.
+* Fixes running switch console inside PyCharm terminal (Ref. #1172)
+* Load meta of the project on loading time (Fixes #2225)
+* Added checking if NIO exists (Fixes #1160)
+* Fixes NAT node not working on Windows (#1163)
+* Fixes loading project when link_id is not set (#1159)
+* Return platform value on appliances list (Fixes #2211)
+* Fixes not known category in Appliances (Fixes #1156)
+
+## 2.1.0b1 04/08/2017
+
+* Sync appliances
+* Interface starting with gns3 are not display by default in the cloud
+* Catch error when something that is not the GNS3 server answer to virtualbox requests
+* Catch KeyError: <aiohttp.connector._TransportPlaceholder
+* Add a warning when you try to load and the server is not started with --local
+* Sync appliances
+* Fix permission on exited container
+
+## 2.1.0a2 31/07/2017
+
+* Handle invalid appliances files
+* Sync appliances
+* Fix naming of node with a number in the name
+* Fix race condition in startup of capture
+* Fix bug when exporting debug information with multiple remote servers
+* Fix OSError when uploading images
+* Fix an error when a symbol is not available on filesystem
+* Fix ServerDisconnectedError for stop_all
+* This fix the images always included in portable project
+* Fix support of docker appliance with a usage
+* Duplicate API for ATM, Ethernet Hub and Frame Relay Switch
+* History support for console and telnet application
+* Fix IOU image upload
+* Duplicate IOU
+* Support duplicate for Docker
+* Duplicate support for qemu
+
+## 2.1.0a1 24/07/2017
+
+* Packet filtering
+* Suspend a link
+* Duplicate a node
+* Move config to central server
+* Appliance templates on server
+
+## 2.0.3 13/06/2017
+
+* Fixes #1068 - handle zipfile encoding issues at project duplication
+* Fix: #1066 - Catching parsing errors at linked vbox file
+* Ignoring virtualenv directory at gitignore
+* Escaping VPCS name in regex #1067
+* Fix racecondition when listing interface
+* Fix Qemu disk creation with unicode characters not supported by local filesystem #1058 (#1063)
+* Fix when config file doesn't have computes section (#1062)
+* Check aiohttp version
+
+## 2.0.2 30/05/2017
+
+* Set correct permission on ubridge when doing a remote installation
+* Remote install script should be totally non interactive
+* Duplicate project on remote server use UUID
+* Fix import of some old topologies from 1.3
+* Fix error in logging of error during starting GNS3 VM
+* Fix an error when logging Docker container fail to start
+* Use docker version in error message of outdated docker installation
+* Support images created by "docker commit". Fixes #1039
+* Do not wait auto start to finish in order to complete project opening
+* Improve logging for remote server connection lost
+
+## 2.0.1 16/05/2017
+
+* Handle HTTP 504 errors from compute node
+* When connecting to a compute node ask for qemu images list
+* When importing portable project NAT node is loaded on GNS3 VM
+* Fix port numbering for Wic slot 1 & 2
+* Fixes issue with connections when loading an ATM switch.
+* Fixes ATM mapping.
+* Fixes Frame-relay VC mapping.
+* Fix export project is looking into the wrong directory
+* Fix a race condition in logging when ubridge exit fast
+* Fix conversion issue with old topology with C3640
+* Fix error when you have a directory in your symbols directory
+* Catch VMWare errors when getting status after GNS3 VM start
+* Make sure upstart LANG is utf8
+* Always install typing module (compat with python 3.4 on ubuntu)
+* Fix KeyError: 'filename'
+* Catch missing function listxattr on some Linux host.
+* Sort image list
+* Handle a race condition at project closing
+* Fix unicode error when reading ios configuration
+* Fix AttributeError: 'NoneType' object has no attribute 'send'
+* Fix a conversion issue with some 1.3 topologies
+* Fix an error with ethernetswitch when ethertype is null
+* Raise an error if we can't create the dynamips configuration directory
+* Catch timeout error when loading virtualbox VM
+* Handle broken compute at server startup
+* Catch error when we can't backup the topology
+* Catch error when writting the topology file on read only device
+* Catch a race condition in VirtualBox when editing and linking
+* Fix a race condition when editing a qemu vm and connecting it
+* Docker aux console is a VT100 terminal
+
+## 2.0.0 02/05/2017
+
+* Fix connection to websocket with last docker release
+* Lower docker requirements in tests also
+* Docker minimum api is 1.25
+* Handling server disconnect error when docker daemon die
+* Handle some invalid SVG images
+
+## 2.0.0rc4 20/04/2017
+
+* Fix a race condition when handling error at project opening
+* Fix an issue with editing network on windows
+* Fix windows tests
+* Catch timeout error on docker
+* typing is already included in Py >= 3.5 (#979)
+* Fix import of some old topologies
+* Fix AttributeError: 'NoneType' object has no attribute 'returncode'
+* Fix ghost vmware vms
+* Fix required field in schema not use
+* Catch error and log them when we can't write the config
+* Fix bridge 'bridge0' already exist when we have trouble with a container
+* Catch an error at startup when the remote GNS3 VM is not a real GNS3 VM
+* Fixes Qemu sata option. Ref #875.
+* Catch GNS3 VM loading error at startup
+
+## 1.5.4 13/04/2017
+
+* Fix VPCS tests for recent version
+* Freeze server dependencies to the same version used for 1.5.3
+* Fix 1.5: Error message, when stopping IOU router #769
+* Drop color logging for remote install, seem to fail in some conditions
+* Cleanup the remote install script
+* Support for Xenial in remote install
+
+## 2.0.0rc3 31/03/2017
+
+* Support IOU image without .bin at the end
+* Allow to change some properties of an already connected ethernet switch
+* Ensure we start only one ubridge
+* Catch some broken hostname for compute node
+* Fix limit of 20 docker containers
+* Fix race conditions in creation of Frame Relay Switch
+* Fix conversion of project from 1.X with custom symbol for cloud
+* Dissallow parallel pull of docker images
+* Add a scripts for running current dev version on GNS3 VM
+* Fix a crash with missing size in the svg files
+* Fix an utf8 error in auth code
+* Improve vmrun timeout message
+* Support utf-8 characters in user and password for auth
+* Handle password configuration change on remote servers
+* Fix Bug when delete fake-running VMBox
+* Fix Can't connect to compute local on some computers
+* Add a modification uuid to settings returned by the server
+* Check python version in setup.py only for install
+* Fix Session is closed when listing docker images
+* Cleanup docker source code
+* Use aiohttp session for docker queries
+* Escape special characters from SVG text
+* Fix some port short name display issues
+* Catch server disconnected errors from computes
+* Generate a node uuid if the uuid is missing in the .gns3
+* Ensure to dump project before exporting it
+* Fix return code check for SIGSEGV of IOU images
+* Prevent vmname change for VirtualBox linked clone
+* Upgrade to aiohttp 1.3.5 to solve issue with big file
+* Handle some invalid svg
+* Try to fix some 1.3 topology with corrupted data
+* Fix ComputeError: Can't connect to Main server
+* Catch error when the server as trouble to access to itself
+* Catch a timeout error in docker
+* Lock yarl version because 0.10 is not compatible with aiohttp 1.3
+* Raise error if image are not avaible on main server during export
+* Fix a race condition when killing ubridge
+* If your settings from 1.X are broken with skip them at import
+* Catch a permission error on symbols
+* Catch unicode error when you try to duplicate a project with invalid characters
+* Catch error when you try to put an invalid server url
+* Fix an error when handling ubridge errors
+* Fix crash when handling an error in project creation
+
+## 2.0.0rc2 10/03/2017
+
+* Drop color logging for remote install, seem to fail in some conditions
+* Cleanup the remote install script
+* Support for Xenial in remote install
+* Fix GNS3VM settings are lost at startup
+* When we receive settings from the client save them on disk
+
+## 2.0.0 RC 1 06/03/2017
+
+* Update the documentation
+* Enable show in file manager for cloud
+* Improve error log when you have trouble to load a topology
+* Fix when qemu exit by itself clean other processes
+* Fix an issue with some node name format
+* Catch error when we can't save the settings
+* Do not prevent the creation of a local server on a machine named gns3vm
+* Load local server before anything else
+* Remove noise from log when VMware is not installed
+* Fix an error with some SVG
+* Patch hostname in configuration file even if name is unsync
+* If the GNS3 VM as failed to start reset his status
+* Update the documentation
+* Enable show in file manager for cloud
+* Improve error log when you have trouble to load a topology
+* Fix when qemu exit by itself clean other processes
+* Fix an issue with some node name format
+* Catch error when we can't save the settings
+* Do not prevent the creation of a local server on a machine named gns3vm
+* Load local server before anything else
+* Remove noise from log when VMware is not installed
+* Fix an error with some SVG
+* Patch hostname in configuration file even if name is unsync
+* If the GNS3 VM as failed to start reset his status
+* Report aiohttp version in crash report
+* Catch some invalid node name formatting
+* Ensure we dump a .gns3 before exporting it
+* Improve ACPI shutdown for virtualbox
+* Fix an issue with serial capture for IOU
+* Fix restoration of private config when using dynamips
+* Avoid a crash when the connection with the server close
+* Increase timeout for detecting VirtualBox GNS3 VM
+* Fix headless startup of the GNS3 VM
+* Do not crash at startup if local server as the same name as remote server
+* Yarl 0.9.8 is require by aiohttp 1.3
+
+## 2.0.0 beta 4 16/02/2017
+
+* Lock aiohttp to 1.2.0 because 1.3 create bug with Qt
+* Avoid a crash in some conditions when reading the serial console
+* Disallow export of project with VirtualBox linked clone
+* Fix linked_clone property lost during topology convert
+* Catch permission error when restoring a snapshot
+* Fix a rare crash when closing a project
+* Fix error when you have error on your filesystem during project convertion
+* Catch error when we can't access to a unix socket
+* If we can't resolve compute name return 0.0.0.0
+* Raise an error if you put an invalid key in node name
+* Improve a lot project loading speed
+* Fix a potential crash
+* Fix the server don't start if a remote is unavailable
+* Do not crash if you pass {name} in name
+* Fix import/export of dynamips configuration
+* Simplify conversion process from 1.3 to 2.0
+* Prevent corruption of VM in VirtualBox when using linked clone
+* Fix creation of qemu img
+* Fix rare race condition when stopping ubridge
+* Prevent renaming of a running VirtualBox linked VM
+* Avoid crash when you broke your system permissions
+* Do not crash when you broke permission on your file system during execution
+* Fix a crash when you broke permission on your file system
+* Fix a rare race condition when exporting debug informations
+* Do not try to start the GNS3 VM if the name is none
+* Fix version check for VPCS
+* Fix pcap for PPP link with IOU
+* Correct link are not connected to the correct ethernet switch port after conversion
+* Fix an error if you don't have permissions on your symbols directory
+* Fix an error when converting some topologies from 1.3
+
+## 2.0.0 beta 3 19/01/2017
+
+* Force the dependency on typing because otherwise it's broke on 3.4
+* Fix sometimes you have an exception when closing GNS3
+* Fix duplicate node names
+* Fix bug with other directory of Qemu images
+* Do not raise an error if no VM is selected for remote GNS3 VM
+* Fix UnboundLocalError: local variable 'vmname' referenced before assignment
+* Fix some race condition in project deletion
+* If qemu status change internally we mirror it
+* Fix hostname of VPCS is not changed
+* Fix capture stop with Wireshark
+* Drop a useless debug information
+* Fix sometimes VirtualBox VM are not loading
+* Drop NAT port from cloud from old topologies
+* Fix Port labels for docker VMs incorrect
+* Fix If cloud interface is down the project doesn't open
+* Catch Timeout error from VirtualBox GNS3 VM
+* Fix export of IOU configuration
+* Fix a crash with VirtualBox in some conditions
+* Sata disk interface support for Qemu VMs. (#862)
+* Fix random error in the dynamips test suite after previous commit
+* Support conversion to dynamips new directory layout on remote
+* Catch error when a file is deleted during the compression of project
+* Fix a crash with some docker images
+* Fix Wrong slot numbering on IOS router
+* Fix VPCS configuration is overwritten on project load
+* Fix wrong short label for ethernet switch, hub & VPCS
+* Fix binding console host for VMware and VirtualBox
+* Fix resume of dynamips routers
+* Fix sporadically systemd is unable to start gns3-server
+* Fix RuntimeError: File size has increased during compressing
+* Do not dump local compute configuration when saving topology
+* Change directory layout for dynamips.
+* Ensure we can't connect to occupy port
+* Fix handling of UTF-8 in large SVG files
+* Prevent a crash when you close a dynamips node and create a link at the same time
+* Fix short label diplay instead of custom interface labels
+* Improve error message about the netmask
+* Do not mark VirtualBox adapter as connected when not connected to another node in GNS3.
+* Add missing 'DLT_PPP_SERIAL' PCAP link type in schemas.
+* Fix crash when converting topology with broken link
+* Replace JSONDecodeError by ValueError (Python 3.4 compatibility)
+* Catch an error when we can't create the IOU directory
+
+## 1.5.3 12/01/2017
+
+* Fix sporadically systemd is unable to start gns3-server
+
+## 2.0.0 beta 2 20/12/2016
+
+* Fix an error when docker hub failed to anwser
+* Fix an issue with Docker and IOU packet capture
+* Support aiohttp 1.2 (but not compatible with previous versions)
+* Support UDP cloud from 1.5
+* Relax permission check on OSX, it seem returning wrong info for setuid
+* Fix start all create error if a docker container is already running
+* Close project if one one the compute of the project is down
+* Fix error when you upload an empty file
+* Fix KeyError: 'color' when converting some 1.3 topologies
+* Fix move a docker restart it
+* Fix export of projects with docker with a / in the image name
+* Fix an error on Linux during export
+* Fix hot link issues in Docker
+* Fix Can't delete link between docker VM after they were in use
+* Fix hardware virtualization detection when an ethernet switch is running
+* Trust user for host binding of link adress
+* Code cleanup for docker interface creation
+* Fix a rare crash when writing a file on a remote server
+* Fix delete project on remote compute
+* Fix trouble with builtin devices when we free ports
+* When a dynamips command failed display the full command to the user
+* Raise error when we can't found VboxManage at GNS3 VM startup
+* Catch auth errors when adding a compute
+* Do not block server startup if one project use non implemented conversion
+* Fix an error when deleting a compute already deleted
+* Catch cancelled error when you Ctrl-C during server initalisation
+* Handle OSerror when listing images
+* Fix a rare crash when stopping qemu
+* Improve docker HTTP console
+* Fix configuration lost during save as on remote server
+* Add support for bios images
+* Fix error when controller config file is corrupted
+
+## 1.5.3 rc1 20/12/2016
+
+* Support aiohttp 1.2 (but not compatible with previous versions)
+* Explain that segfault on IOU is a issue with the image
+* Fix an issue with finding vmrun and vboxmanage
+* Support named remote servers for VPCS
+* When checking for a free port check if the host and 0.0.0.0 are available
+* smm=off is only for 64bits
+* Fix set hostname on remote server
+* Fix sending smm option to qemu
+* Workaround a bug with KVM, Qemu >= 2.4 and Intel CPU
+* Renable sleep at Vbox exit bug seem to be back
+* Support large project (> 2GB) during export
+* Fix Deleting running telnet docker VM shows error in log
+* Fix when closing a container using VNC, root permission are not reset
+* Use $PATH also for dynamips and cleanup some $PATH usages
+* Fix a lock issue with some virtualbox vm
+* Raise proper error when you try to load an empty qcow2 file
+* Fix upload form crash
+* Search bin from the $PATH for sample configuration file
+* Updated systemd unit file and added sample configuration file
+
+## 2.0.0 beta 1 07/12/2016
+
+* Fix crash if at controller loading the remote server is not a GNS3 server
+* Update the way we start controller to avoid hiding crash reports
+* Fix when you switch console from VNC to telnet it's fail
+* AttributeError: 'Project' object has no attribute 'emit'
+* Improve autostart logging
+* Fix warning when vmware is not installed
+* If a VMware command fail retry
+* Do not recurse scan for images in standard image directory
+* When we restore snapshot on a fail project do not crash
+* Catch error when qemuy can't connect to his console
+* Catch error when no space left on disk during export
+* Improve vmware error message for easier copy paste
+* Catch error if you export a project deleted from disk
+* Qemu UDP listen on all ips
+* Force yarl version >= 0.7.0
+* Ask user to refresh is user session if he just installed ubridge
+
+## 2.0.0 alpha 4 24/11/2016
+
+* Do not block traffic originating from an Ethernet interface in the cloud. Ref #771.
+* Prevent capture on non running node
+* Make the Ethernet side the source in uBridge connection and UDP tunnel the destination. Ref #771.
+* IOURC is a text box instead of a file path
+* Use vnetlib64.exe when possible
+* Multiple improvements around starting the GNS3 VM
+* Wait for the end of project loading before making new change
+* Avoid crash due to permission error on the .backup file
+* For security reason debug informations can only be exported from local server
+* Add more debug informations if VM failed to start
+* Fix opening a project whith the same non linked VM as current project
+* Return default symbol if user asked for a non existing symbol
+* Do not log warning at qemu exit on windows if it's normal
+* Speed up interfaces listening on Windows
+* Fix filtering special interfaces on Windows
+* If server answer not found explain this could be due to the usage of 1.X server
+* Do not reload a project via /load if the project is already opened
+* Fix you can not pass auto close at project creation
+* Fix traceback when sending invalid parameters to the server
+* Require ubridge 0.9.7 this fix error with IOL bridge creation
+* Display path of vnetlib during interface creations
+* Catch errors when listing images
+* Better handle compute unavailable errors
+* Fix NameError: name 'available_ram' is not define
+* If we can found a common subnet we return the host binding for link creation
+* Do not connect GNS3 to remote server via 169.254.X.X
+* Qemu telnet support multiple client connected
+* Support multiple client connected to the same VPCS console
+* Increase timeout for link creation
+* Support for serial console for Virtual BOX and VMware using asyncio
+* Fix timeout issues when starting VMware or VBox
+* Ask for reboot if VBoxManage is not found
+* Fix a crash with VirtualBox linked clone
+* Replace iouyap by ubridge to handle IOU connections. Fixes #614.
+* Lock VMware by VM instead of globally
+* Support bridge in cloud
+* Fix support of IOS images outside standard directories
+* Raise clean error when node timeout when stopped
+* Fix random VirtualBox creation error when using linked clone
+* Drop console_type serial, and enable_remote_console for Vbox and VMware
+* Do not dump iourc_content to .gns3 file
+* Forward server disconnected errors
+* Fix a crash when vboxmanage is not found
+* Raise error if IOU image is not configured
+* Fix crash when getting font
+* Fix a crash when default font is missing
+* Fix a crash when vmrun is not found
+
+## 2.0.0 alpha 3 28/10/16
+
+* Fix uuid of VirtualBox VM after a save as
+* Explain that segfault on IOU is a issue with the image
+* Fix crash when you import a corrupted SVG
+* Fix Error while creating link: Port 0 is not allocated. when you have an invalid interface
+* No timeout for listing images
+* Handle 408 HTTP status code (request timeout)
+* Move code for exposing VM ip to the VM itself. And display VM starting status
+* Fix a crash when we have error during export project
+* Improve remote server console host support when binding to 0.0.0.0
+* Fix port naming for atm switch
+* Fix port naming for FrameRelay switch
+* Catch permission errors when listing images
+* If we can't found the VMware version we use workstation
+* CURL API sample for creating a dynamips router
+* Fix crash in idlePC compute
+* Add sample api call for creating a qemu node
+* Try a different method in order to retrieve IP from VMware
+* Fix naming of IOU serial interfaces
+* Improve timeout management
+* When exporting debug information export GNS3 VM vmx content
+* /debug for exporting debug information
+* Raise error if using a non linked clone VM twice
+* Fix a possible deadlock at exit
+* Fix import of some old dynamips topologies
+* Fix a crash with some old virtualbox topologies
+* Fix conflict issue between the GNS3VM and a remote server
+* Fix typo in error message about the GNS3 VM
+* Fix an error when importing old topology without color for label
+* Use tap adapter instead of veth for docker (allow usage of vlan)
+* Avoid crash during tests if VNC server run on host PC
+
+## 2.0.0 alpha 2 20/10/2016
+* Return md5sum and filesize in the list of images
+* Disable binding to an IPV6
+* Support symbol None (from old versions)
+* Support named remote servers for VPCS
+* Improve vmrun error messages
+* If vmware raise an error about invalid host type we retry with player
+* Do not trust client for the type of VMware host
+* Improve error when default vm directory is not found
+* Add a clear warning about /upload deprecated
+* /duplicate support non opened projects
+* Fix Snapshot restore does not work with IOS routers
+* Use last zipstream version
+* Strip space from all nodes names
+* When checking for a free port check if the host and 0.0.0.0 are available
+* If listen on all interface do not return localhost as console
+* Fix HTTP console not working for docker containers
+* Fix IPV6 server support
+* Fix connection issue with IOU when a device as serial link
+* Catch an error when docker is not running
+* If docker container state failed to return we consider the container stopped
+* Fix Error when converting some dynamips topologies from 1.3 => 2.0
+* After conversion from 1.X check the topology before save to disk
+* Keep forever .gns3 backup before version upgrade
+* Update crash report key
+* Fix save of topology size
+* Missing busybox for docker
+* GNS3 server can't be keep as zipped egg
+* Check if GNS3 has access to all docker resssources
+* Return the platform of a compute
+* Handle errors when startup config path is wrong
+* smm=off is only for 64bits
+* Fix uploads of large images
+* Stop raising error if VMware has not enough ram. Not working on some system
+* Increase creation timeout for docker container
+* Fix a rare crash in vbox
+* Fix errors where free port as marked as used after an error
+* Fix a bug when selecting a topology and deleting multiple linked device
+* Set Qemu uuid for csr1000v
+* Prevent connect a node to himself
+* Fix BadZipFile: File is not a zip file
+* The gns3_controller.conf is located in the same directory of gns3_server.conf
+* Make sure the compute has an id
+* Fix crash if you manually delete the project directory and use the delete button in interface
+* Catch timeout error when closing project
+* Fix a crash when importing some old topologies.
+* Fix a crash if font information is missing
+
+## 2.0.0 alpha 1 29/09/2016
+* Save as you go
+* Smart packet capture
+* Capture on any link between any node
+* Select where to run a VPCS node
+* Delete a project from the GUI
+* Project options
+* The cloud is a real node
+* Cloud templates
+* New cloud interface
+* VPCS / Ethernet Switch / Ethernet Hub templates
+* Search OS images in multiple locations
+* Periodic extraction of startup configs for Dynamips and IOU
+* Custom cloud, Ethernet hub and Ethernet switch templates
+* Snap to grid for all objects
+* Synchronize the node templates when using multiple GUI
+* Link label style
+* New place holders in command line for opening consoles
+* %i will be replaced by the project UUID
+* %c will be replaced by the connection string
+* Export a portable project from multiple remote servers
+* New save as
+* Snapshots with remote servers
+* Better start / stop / suspend all nodes
+* Edit config
+* NAT node
+* Support for colorblind users
+* Support for non local server
+* Support for profiles
+* Suspend the GNS3VM when closing GNS3
+* Edit the scene size
+* New API
+
+## 1.5.2 18/08/2016
+
+* Move utils.vmnet to gns3 namespace
+* Fix Exporting portable projects with QEMU includes base images even when selecting no.
+* Catch error when md5sum file is corrupted
+* requirements.txt : added support for newer aiohttp version
+* Improve compaction of .gns3project
+* Fix crash when winpcap is not installed
+
+## 1.5.1 07/07/2016
+
+* Increase the number of interface for docker
+* Add the method in the bad request answer
+* Fix a rare crash in IOU
+* Fix a crash when docker is used but not installed
+* Backport Docker node hot linking
+* Allows hot-linking for Docker containers. Ref #267.
+
+## 1.5.0 27/06/2016
+
+* Fix import of project with no disk
+* Allow for (a lot) more docker container ports. Fixes #593.
+* Raise an error if you try to use Docker on non Linux host
+* Fix a crash in Docker if daemon stop to respond
+* Fix a crash if Dynamips router has no initial configuration
+* Kill ghosts process at startup (Dynamips, VPCS, Ubridge)
+
+## 1.5.0rc2 15/06/2016
+
+* Fix black screen with Qt app in Docker container
+* Detect when command in the container exit
+* Docker when the aux console exit and restart it
+* Pass by default the environment variable container=docker
+* Fix busybox binary location
+* Avoid loosing console port for Docker
+* Workaround a crash in x11vnc
+* Delete volume when dropping the container
+* Catch connection reset in ioucon
+* Delete vlan.dat for L2IOL during config import. Fixes #1285.
+* Copy original ressources from VOLUMES
+
+## 1.5.0rc1 01/06/2016
+
+* Save an restore docker permission
+* Export the list of volumes to a env variable accessible in the container
+* Fix a crash when docker start command is None
+* Ubridge 0.9.4 is require
+* Generate a MAC address using the project + node UUID. Ref #522.
+* Catch extra args in windows signal handler
+* Allow to block network traffic originating from the host OS for vmnet interfaces (Windows only).
+* Fix an import error when you have no GNS3 VM
+* Warn if you can not export a file due to permission issue
+* Do not delete adapters when stopping a VMware VM.  Ref #1066.
+* Allocate a new vmnet interface if vmnet 0 1 or 8 is set to a custom adapter. Set adapter type to all adapters regardless if already configured or added by GNS3.
+* Set default VMware VM adapter type to e1000.
+
+## 1.5.0b1 23/05/2016
+
+* Allow an IOS router to stop even the Dynamips hypervisor command fail to be sent. Ref #488.
+* Extract private-config only when necessary (content is different than the default). Fixes #520.
+* Fixes disabling the VPCS relay feature. Fixes #521.
+* Fixes wrong exception in Docker VM implementation.
+* Force Npcap DLL to be used first for Dynamips and uBridge (instead of the one from Winpcap if installed).
+* Fixed startup-config is lost if you change any IOS router settings. Fixes #1233.
+* Fixes check for NPF service and add check for NPCAP service on Windows.
+* Fix ProcessLookupError X11VNC
+* Force tag latest for docker image if no tag is specified
+* Cleanup unbreakable space
+* Do not raise error if vmrun.exe is named vmrun.EXE
+* Load docker api only for Linux
+
+## 1.5.0a2 10/05/2016
+
+* Fix distribution on PyPi
+
+## 1.5.0a1 10/05/2016
+
+* Rebase Qcow2 disks when starting a VM if needed
+* Docker support
+* import / export portable projects (.gns3project)
+
+## 1.4.6 28/04/2016
+
+* More robust save/restore for VirtualBox linked clone VM hard disks.
+* Prevent non linked cloned hard disks to be detached when using VirtualBox linked cloned VMs. Fixes #1184.
+* Stricter checks to match VMware version to the right vmrun (VIX library) version. Also checks the VIX library version when only using the GNS3 VM running in VMware.
+* Allow only .pcap to be downloaded from remote stream API
+* Fix incrementation of qemu mac address
+* Clear warnings about using linked clones with VMware Player.
+* Alternative method to find the Documents folder on Windows.
+* Add IOU support and install config in /etc
+
+## 1.4.5 23/03/2016
+
+* Stop the VMware VM if there is an error while setting up the network connections or console.
+* Remote install on 14.04 ubuntu
+* Include VMware VMs paths found preferences.ini
+* Allow to stop a VMware VM from GNS3 even if halted within the VM. Fixes #1118.
+* Keep Dynamips stdout log file in the project directory.
+* Get MAC addresses for host interfaces to use for filtering frames from vmnet interfaces.
+* Dynamips uuid hypervisor command is no longer supported.
+* Restart NPF service after adding vmnet adapters on Windows.
+* Support /etc/gns3/gns3_server.conf for the config
+* Improve warning if fusion is not installed or in non standard location
+
+## 1.4.4 23/02/2016
+* Check if VMware Fusion is correctly installed when retrieving the VM list.
+
+## 1.4.3 19/02/2016
+* Nothing! (changes made in the GUI only).
+
+## 1.4.2 17/02/2016
+* Fix missing format in IOU export
+* Fix number of arguments to the UDP errors on VBOX
+* Add verification when UDP tunnel is created in a VirtualBox VM. Ref #899.
+* Fixes VMware linked clone cleanup bug. Fixes #420.
+* Removed docker support from 1.4 (drop unused code)
+* Fix a crash if you create a file named IOS in the image dir
+* Disallow creating project with " in the path
+* Always look at the registry to find vmrun.exe on Windows.
+* Check for VMware VIX library version. Fixes #413.
+* Fixes VDE not working #345.
+* Do not list qemu binary with -spice in the name
+* Send command line used to start the VM to client
+* Fix crash if you have a { in your user name
+
+## 1.4.1 01/02/2016
+* VMware raise error if version is not found
+* For topologies before 1.4 manage qemu missing
+* Fixes issue with packet capture on VMware VMs. Fixes #396.
+* Fixes concurrency issue when closing multiple VMware linked clone VMs. Fixes #410.
+* Fixes "can only use tap interfaces that both already exist and are up". Fixes #399.
+* Send machine stats via the notification stream
+* Check for /dev/kvm instead of kvm-ok
+* Show a warning when starting ASA8
+* Fix error when setting Qemu VM boot to 'cd' (HDD or CD/DVD-ROM)
+* Fixed the VMware default VM location on Windows, so that it doesn't assume the "Documents" folder is within the %USERPROFILE% folder, and also support Windows Server's folder (which is "My Virtual Machines" instead of "Virtual Machines").
+* Improve dynamips startup_config dump
+* Dump environment to server debug log
+* Fix usage of qemu 0.10 on Windows
+* Show hostname when the hostname is missing in the iourc.txt
+
+## 1.4.0 12/01/2016
+* Release 1.4.0
+
+## 1.4.0rc3 05/01/2016
+
+* API documentation update
+* Fix race condition when killing iouyap
+* Catch exception if we can't change process priority on Windows
+* Adds a handler for getting the Qemu related capabilities of the server. Currently includes just a check for KVM architectures.
+* Fixed showing of Qemu hdb_disk_interface - it showed hda_disk_interface instead, which resulted in an odd visual glitch in the GUI.
+* Made the gns3server.bat successfully start the server independent of the CWD at the time of running. It's now relative to the location of the .bat file itself.
+* Add more informations in the debug status page
+* Fix status link in GNS3 homepage
+* Fix tests on Windows
+* Fix missing boot priority order
+* A debug status page embed in the server
+* Fix test on Windows
+* Update links for new website.
+* Contributing instructions
+
+
+## 1.3.13 11/12/2015
+
+* Update links for new website.
+
+## 1.3.12 11/12/2015
+
+* Contributing instructions
+* Correctly display log messages.
+* Tentative fix for "WinError 64 The specified network name is no longer available" issues.
+* Fix minor errors reported by codacy.com
+* Add doc on how to got code coverage
+* Raise an error when you use a port outside the ranges
+* Fix asyncio error when closing the app
+* Release UDP ports when closing a Qemu VM. Fixes #323.
+
+## 1.4.0rc2 10/12/2015
+
+* Add log about wher iou capture packet
+* Replace by another TCP port if port is already used
+* Fix ProcessLookupError in Qemu
+* Increase vmrun timeout to 120 seconds. Ref #360.
+* Fixes termination notification to indicate the right process name (IOU vs iouyap). Ref #359.
+* Fixes error with non initialized uBridge. Fixes #367.
+* Remove debug that can crash qemu
+* Support VM usage for qemu
+* Raise an error if psutil version is invalid
+
+## 1.4.0rc1 12/11/2015
+
+* Raise error if server received windows path
+* Update sentry key
+* Remove NIO FIFO and Mcast (unused). Fixes #348.
+* Support VPCS 0.6.1
+* Fix duplicate of -no-kvm options
+* Raise an error if user send a non local path to remote server
+* Fix minor issues
+* Apply pep8 fix
+* Sets console end port to 7000. Fixes #343.
+* Drop netifaces (replaced by psutil). Fixes #344.
+* Correctly display log messages.
+* Tentative fix for "WinError 64 The specified network name is no longer available" issues.
+* Return relative path for dynamips images
+* Fix add existing IOS not working
+* Correctly enable faulthandler for dev version
+* Avoid test crash if GNS3 is running on the same computer
+* Allow to return an empty project name because it's allowed in creation
+* Test with python 3.5
+* Add doc on how to got code coverage
+
+## 1.4.0b5 02/11/2015
+
+* Freeze requirements for aiohttp because 0.18 doesn't support Python 3.4.
+* Fix crash in IOU config export.
+* Raise an error when you use a port outside the ranges. Fixes #739.
+* Fixes Windows named pipe issue. Fixes #340.
+
+## 1.4.0b4 19/10/2015
+
+* Support for modifications to a base Qemu VM (not a linked clone).
+* Force canceling all task when shutdown server
+* Update api documentation
+* Enforce console port for VNC
+* Fixes issue when loading a project using VMware vmnet interfaces. Fixes #319.
+* Support for NAT connection with cloud for VMware VMs. Fixes #322.
+* Change message when VMware is not installed on Linux. Ref #326.
+* Send a warning notification if there is not enough RAM left to start a VM. Implements #329.
+* Asyncio Qemu fix and raise error if coroutine not used
+* Fix asyncio error when closing the app
+* Removes VMware lock check. Fixes #328.
+* Wait for pipe file to be created before starting the remote console for VMware and VirtualBox VMs. Fixes #331.
+* Release UDP ports when closing a Qemu VM. Fixes #323.
+* Escape other usage of glob
+* Fix Dynamips identifier is already used by another router
+* Protect Dynamips against bad glob.
+* Fix issue with Qemu networking following merge.
+* OVA file support
+* Support listing images in subdirectories.
+* Catch ProcessLookupError in Qemu VM.
+* Fixes uncalled coroutine.
+* Use the correct UDP tunnel Qemu syntax for version > 1.1.0 when legacy networking is enabled.
+* VMware player linux support.
+* Prevent launching a packet capture with a non-ASCII path when using Dynamips.
+* Do not require a TAP interface to already exist. Fixes #321.
+* Do not automatically delete Dynamips bootflash file because they are necessary to restore VLANs on the c3600 platform.
+
+## 1.3.11 07/10/2015
+
+* Escape other usage of glob
+* Fix Dynamips identifier is already used by another router
+* Protect dynamips against bad glob
+* Catch ProcessLookupError in Qemu VM.
+* Use the correct UDP tunnel Qemu syntax for version > 1.1.0 when legacy networking is enabled.
+* Prevent launching a packet capture with a non-ASCII path when using Dynamips.
+* Do not automatically delete Dynamips bootflash file because they are necessary to restore VLANs on the c3600 platform.
+* Fix dynamips configuration lost when you delete a node
+* Clarify error message when we got UTF-8 chars in the iourc file
+* Check for valid FR or ATM switch mappings. Fixes #300.
+
+## 1.4.0b3 22/09/2015
+
+* Fix dynamips configuration lost when you delete a node
+* Clarify error message when we got UTF-8 chars in the iourc file
+* Use custom VMnet interfaces without host adapter when uBridge is not used. Fixes #673.
+* Automatically add the -no-kvm option if -icount is detected to help with the migration of ASA VMs created before version 1.4
+* Check for valid FR or ATM switch mappings. Fixes #300.
+* Catch exception when a process cannot be killed. Fixes #296.
+
+
+## 1.4.0beta2 17/09/2015
+
+* Fix a crash at vmware stop
+* Fix a crash when starting a VMware vm
+* Add how to add vmnet interfaces explantion in the error message
+* Fix path of VMinventory for fusion
+* Force close the keep alive when sending a 401
+* Do not automatically delete Dynamips bootflash file because they are necessary to restore VLANs on the c3600 platform.
+* Wait that an user press a key to stop gns3vmnet.exe on Windows.
+* Throw an error if ubridge as incorrect permissions. Fixes #312.
+* This may fix "The semaphore timeout period has expired" error on Windows. #311.
+* Fixes bug with VMware VM connections + moves some uBridge code to BaseVM.
+* Support for packet capture on VMware VM links.
+* Fix ProcessLookupError on _checkAlive Qemu
+* VMware Fusion support with uBridge.
+* Updates vmnet script to support Windows.
+* Do not block on .lock for VMware OSX
+* Require Dynamips version 0.2.16 to change the default QinQ Ethernet type.
+* Initial Docker support from Google Summer of Code (not enabled)
+* Check for valid FR or ATM switch mappings. Fixes #300.
+* VirtualBox VMs can only be started if powered off. Fixes #299.
+* Support of VPCS 0.8
+* Allows VMware VMs to use vmnet interfaces for connections without using uBridge. Fixes #295.
+* Fixes path to vmnet-cli on Mac OS X.
+* Updates vmnet script to support Mac OS X.
+* Fix closing project when multiple project is open
+* Fix project not closing
+* Qemu user options are at the end. It's allow user to add his own net interfaces
+* Change the way we look for Qemu path
+* Lock qemu vm during start / stop operations
+* In the error message explain how to turn off KVM support
+* Fix when you stop qemu on windows you have an error
+* Fix Qemu cannot be used on Windows
+* Allow to start server with python -m gns3server
+* Should solve the BufferError by avoiding using thread
+* Catch UnicodeEncodeError when passing unicode char as qemu options
+* EthernetSwitch: Allow to choose ethertype for QinQ outer tag.
+* Backport: fixes NAT NIO for Qemu VMs (do not launch any legacy scripts)
+* Fixes NAT NIO for Qemu VMs (do not launch any legacy scripts)
+* Lower VMware requirements to Workstation version 10 and Player version 6.
+* Fixes Unicode error. Fixes #290.
+* Don't delete Dynamips ROM files. They are used to restore the nvram.
+* Adds pywin32 dependency in setup.py for Windows.
+
+## 1.3.10 04/09/2015
+
+* Catch exception when a process cannot be killed. Fixes #296.
+* Backport: fixes NAT NIO for Qemu VMs (do not launch any legacy scripts)
+* Fixes Unicode error. Fixes #290.
+* Don't delete Dynamips ROM files. They are used to restore the nvram.
+
+## 1.4.0beta1 07/08/2015
+
+* Fix ram setting for Qemu
+* Explicit set qemu memory as MB
+* Turn off KVM for non x86 architectures
+* Send an error when vmware executable cannot be found on Linux. Fixes #288.
+* Support for CPUs setting for Qemu VMs.
+
+## 1.4.0alpha4 04/08/2015
+
+* Quote command in qemu debug logs so you can copy/paste them
+* Support for Qemu disk interfaces, cd/dvd-rom image and boot priority. Fixes #278.
+* Check for VMware Player version >= 7 and VMware Workstation >= 11. Fixes #286.
+* Catch GeneratorExit exception when trying to create a Ghost IOS image.
+* Backport: removes code that deletes IOS router instance files.
+
+## 1.3.9 03/08/2015
+
+* Backport: removes code that deletes IOS router instance files.
+
+## 1.4.0alpha3 28/07/2015
+
+* Raise error if qemu image already exist when creating disk
+* Prevent user to create a qemu to a different directory on non local server
+* VMnet manager on Linux: check that VMware has been installed.
+* Fixes UnicodeDecodeError when reading a VMware file.
+* Fixes KeyError: "ethernet0.connectiontype". Fixes #276.
+* Fixes replace errors. Fixes #284.
+* Catch ProcessLookupError when updating iouyap config. Fixes #255.
+* API for creating a qemu disk image
+* Prevent starting different hypervisors that leverage hardware virtualization (VT-x/AMD-V). Fixes #548.
+* Fixes IOS adapters and WICS cannot be removed. Fixes #282.
+* Makes sure the loop is running when closing the app.
+* Catch Permission denied when writing to VMX file while closing VMware VM. Fixes #277.
+* Catch GeneratorExit exception. Fixes #231.
+* Fixes missing chipset info for VirtualBox VM (maybe some older VirtualBox version don't have it). Fixes #254.
+* Changes how to look for the vmrun.exe location.
+* Update documentation
+* API for listing current projects
+
+## 1.3.8 27/07/2015
+
+* Catch ProcessLookupError when updating iouyap config. Fixes #255.
+* Fixes IOS adapters and WICS cannot be removed. Fixes #282.
+* Makes sure the loop is running when closing the app.
+* Catch GeneratorExit exception. Fixes #231.
+* Fixes missing chipset info for VirtualBox VM. Fixes #254.
+* Fixes IOURC upload.
+* Restore images & projects tarballs
+* Allow users to backup projects and images.
+* Update gns3.conf.upstart.
+* Fix incorrect vboxmanage sudo command.
+* Backport from 1.4: option to drop nvram & disk files for IOS routers in order to save disk space.
+* Backport from 1.4: Remove timeout to wait for connections to finish.
+* Backport from 1.4: Fixes RuntimeError: Event loop is closed.
+* Backport from 1.4: Bind host on 0.0.0.0 when checking for a free UDP port.
+
+## 1.4.0alpha2 22/07/2015
+
+* Deactivate uBridge process monitoring (process returns 1 on Windows when stopping).
+* Prevent using different hypervisors that leverage hardware virtualization. - Implemented for Qemu when a VMware or VirtualBox VM with hardware virtualization is already running. - Implemented for VirtualBox only when a Qemu VM with KVM is already running.
+* Check for uBridge version and catch uBridge errors.
+* Remove default FLASH when no hda disk for Qemu VMs. Fixes  #535.
+* Use the registry to find vmrun if the default VMware install path does not exist.
+* Bind host on 0.0.0.0 when checking for a free UDP port.
+* Fixes RuntimeError: Event loop is closed. Fixes #266.
+* Update gns3.conf.upstart
+* Implements uBridge hypervisor.
+* Take VMware file encoding into account. Fixes #261.
+
+## 1.4.0alpha1 09/07/2015
+
+* Update API documentation
+* Allow to send the iourc when starting the VM
+* Return stdout when a process crash for IOU, Dynamips, uBridge and VPCS.
+* Adds -no-kvm to the ASA template and ignore -no-kvm on platforms other than Linux. Should resolve #472.
+* Allow user to change the configuration file
+* Fix double loading of config from working directory
+* CORS support
+* Support server config in current working directory
+* List only valid existing IOS images (for IOS router wizard).
+* Checks if IOS image exist at startup and not during node creation. Fixes #240.
+* When a qemu VM crash send the log to the client.
+* Add a vm_directory field
+* Check for /dev/kvm. Fixes #245.
+* Moves KVM setting to Qemu server preferences. Fixes #244.
+* VNC console support for Qemu VMs.
+* Test all IOU requirements at VM startup
+* ACPI shutdown support for VMware VMs. Fixes #436.
+* Compute a md5sum of images for futur purpose
+* Adds gns3-netifaces to dependencies only if netifaces isn't already installed otherwise this requires a compilation and therefore the Python development files.
+* Adds an IP address for each interface returned by the interfaces API method.
+* Add log when we didn't close a project due to another client
+* Limit file size during upload
+* Convert old -enable-kvm to kvm settings for Qemu
+* Cleanup SSL certificate support
+* Improve memory consumption of file upload with the HTML form
+* systemd start script 
+* Enable KVM acceleration option.
+* Check interface is up before connecting a NIO (Linux only). Fixes #277.
+* IPv6 support.
+* Import/Export support for IOU nvrams.
+* Install qt5 for travis
+* Option to drop nvram & disk files for IOS routers in order to save disk space.
+* Drop python 3.3
+* Support for base MAC address for Qemu VMs.
+* ACPI shutdown support for Qemu VMs.
+* ACPI shutdown support for VirtualBox VMs.
+* Upload images API
+* A notification stream with process monitoring
+* VMware support 
+
+## 1.3.7 22/06/2015
+
+* Prevent install on Python 2
+
+## 1.3.6 16/06/2015
+
+* Fix an issue with 1.4dev compatibility
+
+## 1.3.5 16/06/15
+
+* Ignore invalid characters when reading the output of a process
+* Turn on / off authentication
+* Ensure no colored output on Windows
+* Do not stop saving IOS router configs when there is an exception while a project is committed.
+* Create a private config file if expected
+* Distribute our own version of netifaces working with python 3
+* Fix crash if a private config exist in IOS but no private config file
+* Basic Auth support
+* Fix crash when virtualbox list of VMS return an empty line
+
+## 1.3.4 02/06/15
+
+* Drop useless dependencie dateutil
+* Check if port or adapter is connected before starting/stopping a packet capture. Fixes #196.
+* Prevent users to add links to running Qemu VMs and start a capture on running VirtualBox VMs.
+* Fixes bug: couldn't set PCMCIA disk1 size for IOS routers.
+* Fix crash if you pass an invalid hostname
+* Catch VPCS kill errors
+* Raise a VirtualBox error if adapter doesn't exists
+* Ignore VirtualBox VM Name with a carriage return in name
+* Cleanup the temporary project after modules have been notified of the path change
+* Do not return error if we can't remove the old project directory
+* Catch encoding errors in windows logger
+* Use setter for the qemu_path (allow to pass only the binary name)
+* Fixes TAP connection when using VPCS.
+* Fix crash launching qemu on OSX from another location.
+* Adds NAT NIO in device schema validation so they can return an error that it is not supported.
+
+## 1.3.3 14/05/15
+
+* Check for empty iourc path.
+* Fixes bugs with IOS router configs. Fixes #354.
+* Use a temporary directory as egg cache
+* Catch crash error in IOU in case of permission denied
+
+## 1.3.3rc1 07/05/2015
+
+* Return an error if an adapter slot doesn't exist on an IOS router.
+* NIO NAT support for VirtualBox VMs.
+* NIO NAT support for QEMU VMs (user mode back-end is used).
+* Throw an error if user put an invalid port range in config file
+* Turn off configuration parser interpolation
+* Catch configuration file parsing errors
+* Force closing the event loop to avoid warning with Python 3.4.3
+* Catch error when you can't mark a project as no longer temporary
+* Catch BrokenPipeError for OSX frozen server
+* Match how IOU initial-config is set for VPCS VM.
+* Refactors how startup-config and private-config are handled for IOS routers.
+* Catch the "WinError 0 The operation completed successfully" exception at a higher level.
+* Fix temporary project not cleanup with save as
+* If image is not found in VM directory look in images folder
+* Ordered MAC addresses for QEMU based VMs.
+* Merge remote-tracking branch 'origin/master'
+* Force utf-8 configuraton files reading
+* Do not list file starting with a . in upload handler
+* Do not crash when closing a project if VirtualBox is not accessible
+* Catch connection reset errors
+
+
+## 1.3.2 28/04/2015
+
+* Cleanup the VirtualBox Media Manager after closing a project.
+* Avoid Cygwin warning with VPCS on Windows.
+* Close VirtualBox VM linked clone disks after the VM is unregistered.
+* TAP interface support for QEMU VMs.
+* Return an explicit error when a NIO type is not supported by a VM.
+* Do not erase the IOU config
+* Explicit utf-8 decoding.
+* Check NIO exists when stopping an IOU capture.
+* Fixes c7200 NPE setting.
+* Fixes VPCS process termination.
+* Catch FileNotFoundError exception in os.getcwd()
+* Explicit utf-8 encoding where necessary to avoid Unicode errors on Windows (we require/set an utf-8 locale on other systems).
+* Fixes #270. Relative paths management with empty ones.
+* New crash report key and doesn't send report for developers
+* Catch COM errors when connecting to WMI.
+* Don't assume the PATH environment variable exists.
+* Use UUIDs instead of the VM names for VirtualBox pipe paths.
+* Add --log options for daemon support
+* Basic upstart script
+* Add qemu-kvm to the list of binary
+* Fix IOU licence check flag
+* Config paths are not used when updating Dynamips or IOU VM settings.
+* Fixes initial-configs that were not restored when opening a project containing IOU VMs.
+* Prevent parallel execution of VBox commands
+* Fix a crash when in some cases you can't access to VBOX state
+* Fix crash if VirtualBox doesn't return API version
+* Fix a crash in VirtualBox vm creation
+* Allocate random names for Dynamips NIOs.
+* Explicitly delete Dynamips NIOs and unmap VCs for ATM and Frame-Relay switches.
+
+## 1.3.1 11/04/2015
+
+* Release
+
+## 1.3.1rc4 09/04/2015
+
+* Initial config file content can be empty (fix export issues)
+* Fix crash if IOU initial config is emtpy
+* Return more informations about bad requests for crash reports
+* Allow less strict dependencies for easier install
+* Missing project name in documentation
+* Some spring cleaning
+
+
+## 1.3.1rc3 07/04/2015
+
+* Fix missing IOU documentation
+* Add missing project name in curl documentation
+* Look in old IOU images location in order to smooth transition
+
+## 1.3.1rc2 06/04/2015
+
+* Do not overwrite initial-config IOU if client send an empty
+* Fix documentation about /ports/udp
+
+## 1.3.1rc1 05/04/2015
+
+* Fix issues with macos X dynamips not freeing UDP port
+* Fix encoding error when saving dynamips configuration
+* The upload web page return a 200 in case of error (IE compatibility)
+* Do not crash if dynamips config contain non ascii chars
+* Test path with chinese charcaters in Qemu
+* Do not crash if no console port is available for VBox
+* Raise a DynamipsError if we can't access to VM status
+* Check name of the VBoxManage executable
+* Exclude docs and tests package from distribution
+* Catch error when qemu additional options are invalid
+* Fix ClientDisconnectedError
+* Fix crash when NIO doesn't exist
+* Turn off crash report if raven not available
+* Fix crash when IOU script file is incorrect
+
+## 1.3.0 30/03/2015
+
+* Fix issue when asyncio read is cancelled and data is still sent by Dynamips hypervisor.
+* Fix unicode decode error when saving IOS router configs.
+* Fix error when missing adapter in Dynamips IOS router.
+* Fix crash if we call stop on dynamips on non started process.
+* Fix use_default_iou_values param was not set.
+* Fix issue when IOURC environment variable is set to None.
+* Fix issue when exporting IOS router configs.
+* Fix check if VPCS process is running.
+* Fix bug when remove_nio() is not a coroutine for ATM and FR switches.
+* Fix how to test if iou and iouyap are running.
+* Allocate a random port for Qemu monitor. Fixes issue with pre 1.3 projects.
+* Fix default chassis bug.
+
+## 1.3.0rc2 23/03/2015
+
+* Update sentry key
+* Prevent error when suspend/resume is not supported in QEMU VM.
+* Adds project id when requesting UDP port.
+* Make sure used ports in a project are cleaned up when closing it.
+* Save configs when project is committed.
+* Initialize chassis when creating an IOS router. Fixes  #107.
+* Lock the dynamips reader an writer
+
+## 1.3.0rc1 19/03/2015
+
+* Save IOS router config when saving the project
+* Look in legacy IOU images directory
+* Support IOURC upload
+* Configuration on UNIX
+* Support all QEMU status
+* Bind tunnel UDP to the correct source index
+
+## 1.3.0beta2 13/03/2015
+
+* Fixed issue when VBoxManage returns an error.
+* Server handler to shutdown a local server.
+* List the iourc file in upload handler.
+* Fixed hostid error.
+* Support RAM setting for VirtualBox VMs.
+* Alternative local server shutdown (intended for Windows).
+* Request user permission to kill the local server if it cannot be stopped.
+
+## 1.3.0beta1 11/03/2015
+
+* Optional IOU license key check.
+* Relative path support of IOU, IOS and Qemu images.
+* Do not give attachment warning for generic attachments in VirtualBox.
+* Support for HDC and HDD disk images in Qemu.
+* Fixed bug when starting a packet capture in VirtualBox with the project path containing spaces.
+* Renames server.conf and server.ini to gns3_server.conf and gns3_server.ini respectively.
+* Use TCP instead of Telnet to communicate with Qemu monitor.
+* Have the server look in the right place for relative image paths.
+* Fixed bugs when checking if this is a local project.
+* Concert old projects on remote servers.
+* Properly restore configs for Dynamips routers.
+* Fixed rename bug for linked clones in VirtualBox.
+* Makes absolute path checks work on Windows.
+* Upload IOURC file via the web interface
+* Upload interface allows users to choose an image type.
+* Fixed Qemu networking.
+* Fixed suspend and resume for Qemu VMs.
+* Fixed crash when you start capture on a non running IOU.
+* Fixed Telnet server initialization issue in VirtualBox.
+* Disconnect network cable if adapter is not attached in VirtualBox vNIC.
+
+## 1.3.0alpha1 03/03/2015
+
+* HTTP Rest API instead of WebSocket
+* API documentation
+* Create a dedicated configuration file for the server: server.conf
+* Temporary projects are real project
+* Use UUID instead of id
+
+## 1.2.3 2015/01/17
+
+* Fixed broken -netdev + legacy virtio in Qemu support.
+* Ping and traceroute added to the IOU VM.
+
+## 1.2.2 2015/01/16
+
+### Small improvements / new features
+
+* Auxiliary console support for IOS routers.
+* Suspend / resume support for Qemu.
+* Dynamically configure network connections of running Qemu VMs (only with recent Qemu versions).
+* VPCS multi-host support (useful for old .net labs).
+* Possibility to run VirtualBox as another user (Linux/OSX only).
+* Support for IOURC file on the server side.
+* Bumped the maximum network adapters to 32 for Qemu (depending on Qemu version you cannot go above 8 or even 28, Qemu will just not start).
+* Added snapshot named 'reset' to linked cloned VirtualBox VMs.
+* More network interface options to the Qemu VM configuration interface as well as descriptions for all NICs.
+* More checks on minimum RAM for IOS routers and updates default values to match the latest IOS image requirements.
+* Fixed bug when importing Host node with UDP NIOs.
+
+## 1.2.1 2014/12/04
+
+* Early support for IOSv and IOSv-L2 (with Qemu for now, which is slow on Windows/Mac OS X).
+* Support for CPU throttling and process priority for Qemu.
+* Fixed C7200 IO cards insert/remove issues and makes C7200-IO-FE the default.
+* Updated the IOU VM with iouyap version 0.95 (packet capture).
+
+
+## 1.2 2014/11/20
+
+* New VirtualBox support
+* New Telnet server for VirtualBox.
+* Add detection of qemu and qemu.exe binaries.
+* New host node (cloud with all available Ethernet & TAP interfaces added).
+* Option to allow console connections to any local IP address when using the local server.
+* VirtualBox linked clones support (experimental, still some problems with temporary projects).
+
+
+## 1.1 2014/10/23
+
+* Serial console for local VirtualBox.
+

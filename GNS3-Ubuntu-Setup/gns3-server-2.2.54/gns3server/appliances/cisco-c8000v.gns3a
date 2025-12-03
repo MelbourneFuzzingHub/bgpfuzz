@@ -1,0 +1,121 @@
+{
+    "appliance_id": "d223e573-8de5-4f93-b26d-d5d1f2f18226",
+    "name": "Cisco Catalyst 8000V",
+    "category": "router",
+    "description": "The Cisco Catalyst 8000V Edge Software is a virtual, form-factor router deployed on a virtual machine (VM) running on an x86 server hardware.",
+    "vendor_name": "Cisco",
+    "vendor_url": "http://www.cisco.com/",
+    "documentation_url": "https://developer.cisco.com/docs/modeling-labs/cat-8000v/",
+    "product_name": "c8000v",
+    "product_url": "https://developer.cisco.com/modeling-labs/",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "There is no default password and enable password. A default configuration is present.",
+    "port_name_format": "Gi{port1}",
+    "qemu": {
+        "adapter_type": "vmxnet3",
+        "adapters": 4,
+        "ram": 4096,
+        "hda_disk_interface": "ide",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "kvm": "require"
+    },
+    "images": [
+        {
+            "filename": "c8000v-universalk9_8G_serial.17.15.01a.qcow2",
+            "version": "17.15.01a 8G",
+            "md5sum": "41efa0aedd67f1f57cde1263c79d9ff6",
+            "filesize": 1846280192,
+            "download_url": "https://software.cisco.com/download/home/286327102/type/282046477/release/IOSXE-17.15.1a"
+        },
+        {
+            "filename": "c8000v-universalk9_8G_serial.17.09.04a.qcow2",
+            "version": "17.09.04a 8G",
+            "md5sum": "d5dcba52b522f41648538737af80cdf9",
+            "filesize": 1858142208,
+            "download_url": "https://software.cisco.com/download/home/286327102/type/282046477/release/Cupertino-17.9.4a"
+        },
+		{
+            "filename": "c8000v-universalk9_8G_serial.17.09.01a.qcow2",
+            "version": "17.09.01a 8G",
+            "md5sum": "a10ae2c4d71f4eb611bc4d83ad7709f0",
+            "filesize": 1856634880,
+            "download_url": "https://software.cisco.com/download/home/286327102/type/282046477/release/Cupertino-17.9.1a"
+        },
+        {
+            "filename": "c8000v-universalk9_8G_serial.17.06.05.qcow2",
+            "version": "17.06.05 8G",
+            "md5sum": "aeb15ab8e1cbd0cd76f7260a81442f98",
+            "filesize": 1777795072,
+            "download_url": "https://software.cisco.com/download/home/286327102/type/282046477/release/Bengaluru-17.6.5"
+        },
+        {
+            "filename": "c8000v-universalk9_8G_serial.17.06.01a.qcow2",
+            "version": "17.06.01a 8G",
+            "md5sum": "e278fa644295c703976a86f7f1c1cd65",
+            "filesize": 1595277312,
+            "download_url": "https://software.cisco.com/download/home/286327102/type/282046477/release/Bengaluru-17.6.1a"
+        },
+        {
+            "filename": "c8000v-universalk9_8G_serial.17.04.01a.qcow2",
+            "version": "17.04.01a 8G",
+            "md5sum": "5c1dd1d3757ea43b5b02e0af7a010525",
+            "filesize": 1623130112,
+            "download_url": "https://software.cisco.com/download/home/286327102/type/282046477/release/Bengaluru-17.4.1a"
+        },
+        {
+            "filename": "c8000v-universalk9_8G_serial.17.04.01b.qcow2",
+            "version": "17.04.01b 8G",
+            "md5sum": "84aebb7f5f38bdd4df8e7607643027be",
+            "filesize": 1623130112,
+            "download_url": "https://software.cisco.com/download/home/286327102/type/282046477/release/Bengaluru-17.4.1b"
+        }
+    ],
+    "versions": [
+        {
+            "name": "17.15.01a 8G",
+            "images": {
+                "hda_disk_image": "c8000v-universalk9_8G_serial.17.15.01a.qcow2"
+            }
+        },
+        {
+            "name": "17.09.04a 8G",
+            "images": {
+                "hda_disk_image": "c8000v-universalk9_8G_serial.17.09.04a.qcow2"
+            }
+        },
+		{
+            "name": "17.09.01a 8G",
+            "images": {
+                "hda_disk_image": "c8000v-universalk9_8G_serial.17.09.01a.qcow2"
+            }
+        },
+        {
+            "name": "17.06.05 8G",
+            "images": {
+                "hda_disk_image": "c8000v-universalk9_8G_serial.17.06.05.qcow2"
+            }
+        },
+        {
+            "name": "17.06.01a 8G",
+            "images": {
+                "hda_disk_image": "c8000v-universalk9_8G_serial.17.06.01a.qcow2"
+            }
+        },
+        {
+            "name": "17.04.01a 8G",
+            "images": {
+                "hda_disk_image": "c8000v-universalk9_8G_serial.17.04.01a.qcow2"
+            }
+        },
+        {
+            "name": "17.04.01b 8G",
+            "images": {
+                "hda_disk_image": "c8000v-universalk9_8G_serial.17.04.01b.qcow2"
+            }
+        }
+    ]
+}

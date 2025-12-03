@@ -1,0 +1,75 @@
+{
+    "appliance_id": "0706912e-be44-45b7-9723-d9c3749dd5ef",
+    "name": "FreeBSD",
+    "category": "guest",
+    "description": "FreeBSD is an advanced computer operating system used to power modern servers, desktops, and embedded platforms. A large community has continually developed it for more than thirty years. Its advanced networking, security, and storage features have made FreeBSD the platform of choice for many of the busiest web sites and most pervasive embedded networking and storage devices.",
+    "vendor_name": "FreeBSD",
+    "vendor_url": "http://www.freebsd.org",
+    "vendor_logo_url": "https://raw.githubusercontent.com/GNS3/gns3-registry/master/vendor-logos/FreeBSD.jpg",
+    "documentation_url": "https://www.freebsd.org/docs.html",
+    "product_name": "FreeBSD",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "User: root, not password is set.",
+    "port_name_format": "em{0}",
+    "qemu": {
+        "adapter_type": "virtio-net-pci",
+        "adapters": 4,
+        "ram": 256,
+        "hda_disk_interface": "virtio",
+        "arch": "x86_64",
+        "console_type": "vnc",
+        "kvm": "require"
+    },
+    "images": [
+        {
+            "filename": "FreeBSD-14.0-RELEASE-amd64.qcow2",
+            "version": "14.0",
+            "md5sum": "87b988eaa4a8aaabea1c10649c98b3f0",
+            "filesize": 3506569216,
+            "download_url": "https://www.freebsd.org/where.html",
+            "direct_download_url": "https://download.freebsd.org/releases/VM-IMAGES/14.0-RELEASE/amd64/Latest/FreeBSD-14.0-RELEASE-amd64.qcow2.xz",
+            "compression": "xz"
+        },
+        {
+            "filename": "FreeBSD-13.0-RELEASE-amd64.qcow2",
+            "version": "13.0",
+            "md5sum": "e8e598959da456c03260421b5f9890de",
+            "filesize": 3466854400,
+            "download_url": "https://www.freebsd.org/where.html",
+            "direct_download_url": "http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/VM-IMAGES/13.0-RELEASE/amd64/Latest/FreeBSD-13.0-RELEASE-amd64.qcow2.xz",
+            "compression": "xz"
+        },
+        {
+            "filename": "FreeBSD-12.3-RELEASE-amd64.qcow2",
+            "version": "12.3",
+            "md5sum": "3d7d5396f3d89ed30c2bfa2ee2e6b013",
+            "filesize": 3412000768,
+            "download_url": "https://www.freebsd.org/where.html",
+            "direct_download_url": "http://ftp-archive.freebsd.org/pub/FreeBSD-Archive/old-releases/VM-IMAGES/12.3-RELEASE/amd64/Latest/FreeBSD-12.3-RELEASE-amd64.qcow2.xz",
+            "compression": "xz"
+        }
+    ],
+    "versions": [
+        {
+            "name": "14.0",
+            "images": {
+                "hda_disk_image": "FreeBSD-14.0-RELEASE-amd64.qcow2"
+            }
+        },
+        {
+            "name": "13.0",
+            "images": {
+                "hda_disk_image": "FreeBSD-13.0-RELEASE-amd64.qcow2"
+            }
+        },
+        {
+            "name": "12.3",
+            "images": {
+                "hda_disk_image": "FreeBSD-12.3-RELEASE-amd64.qcow2"
+            }
+        }
+    ]
+}

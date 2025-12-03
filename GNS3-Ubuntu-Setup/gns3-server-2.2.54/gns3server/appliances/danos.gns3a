@@ -1,0 +1,57 @@
+{
+    "appliance_id": "ccbd2d81-c588-4bbb-80ac-ba20686b613a",
+    "name": "DANOS",
+    "category": "router",
+    "description": "The Disaggregated Network Operating System (DANOS) project enables community collaboration across network hardware, forwarding, and operating system layers. DANOS is initially based on AT&T's \"dNOS\" software framework of a more open, cost-effective and flexible alternative to traditional networking equipment. As part of The Linux Foundation, it now incorporates contributions from complementary open source communities in building a standardized distributed Network Operating System (NOS) to speed the adoption and use of white boxes in a service provider's infrastructure.",
+    "vendor_name": "Linux",
+    "vendor_url": "https://www.danosproject.org/",
+    "documentation_url": "https://danosproject.atlassian.net/wiki/spaces/DAN/pages/753667/DANOS+1908",
+    "product_name": "DANOS",
+    "product_url": "https://www.danosproject.org/",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "Default username / password is tmpuser / tmppwd.  DANOS will live boot and drop into a shell. DANOS can then be installed inside the VM by typing install image.  Defaults to using a telnet console, but the vnc console can provide additional help if it's not booting.",
+    "symbol": ":/symbols/affinity/circle/gray/router_cloud.svg",
+    "port_name_format": "dp0s{3}",
+    "qemu": {
+        "adapter_type": "virtio-net-pci",
+        "adapters": 8,
+        "ram": 4096,
+        "cpus": 4,
+        "hda_disk_interface": "ide",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "boot_priority": "cd",
+        "kvm": "require",
+        "options": "-cpu host"
+    },
+    "images": [
+        {
+            "filename": "danos-2012-base-amd64.iso",
+            "version": "2012",
+            "md5sum": "fb7a60dc9afecdb274464832b3ab1ccb",
+            "filesize": 441450496,
+            "download_url": "https://danosproject.atlassian.net/wiki/spaces/DAN/pages/892141595/DANOS+2012",
+            "direct_download_url": "https://s3-us-west-1.amazonaws.com/2012.repos.danosproject.org/2012/iso/danos-2012-base-amd64.iso"
+        },
+        {
+            "filename": "empty8G.qcow2",
+            "version": "1.0",
+            "md5sum": "f1d2c25b6990f99bd05b433ab603bdb4",
+            "filesize": 197120,
+            "download_url": "https://sourceforge.net/projects/gns-3/files/Empty%20Qemu%20disk/",
+            "direct_download_url": "https://sourceforge.net/projects/gns-3/files/Empty%20Qemu%20disk/empty8G.qcow2/download"
+        }
+    ],
+    "versions": [
+        {
+            "name": "2012",
+            "images": {
+                "hda_disk_image": "empty8G.qcow2",
+                "cdrom_image": "danos-2012-base-amd64.iso"
+            }
+        }
+    ]
+}

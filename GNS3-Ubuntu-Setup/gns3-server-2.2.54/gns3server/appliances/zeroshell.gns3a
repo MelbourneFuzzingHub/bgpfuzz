@@ -1,0 +1,103 @@
+{
+    "appliance_id": "a210781e-471a-4628-8f43-83941c3909a6",
+    "name": "ZeroShell",
+    "category": "router",
+    "description": "Zeroshell is a Linux distribution for servers and embedded devices aimed at providing the main network services a LAN requires. It is available in the form of Live CD or Compact Flash image and you can configure and administer it using your web browser.",
+    "vendor_name": "Fulvio Ricciardi",
+    "vendor_url": "http://www.zeroshell.org",
+    "documentation_url": "http://www.zeroshell.org/documentation/",
+    "product_name": "ZeroShell",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "Default WebUI credentials: admin / zeroshell",
+    "qemu": {
+        "adapter_type": "e1000",
+        "adapters": 4,
+        "ram": 256,
+        "hda_disk_interface": "ide",
+        "arch": "x86_64",
+        "console_type": "vnc",
+        "kvm": "allow"
+    },
+    "images": [
+        {
+            "filename": "ZeroShell-3.9.3-X86-USB.img",
+            "version": "3.9.3",
+            "md5sum": "9be2b399f59df51e5026d81e45b8caf3",
+            "filesize": 1992294400,
+            "download_url": "http://www.zeroshell.org/download/",
+            "direct_download_url": "http://www.zeroshell.net/listing/ZeroShell-3.9.3-X86-USB.img.gz",
+            "compression": "gzip"
+        },
+        {
+            "filename": "ZeroShell-3.8.2-X86-USB.img",
+            "version": "3.8.2",
+            "md5sum": "bb8c7f24c86eb59e26ce36ff1979ecd4",
+            "filesize": 1992294400,
+            "download_url": "http://www.zeroshell.org/download/",
+            "direct_download_url": "http://www.zeroshell.net/listing/ZeroShell-3.8.2-X86-USB.img.gz",
+            "compression": "gzip"
+        },
+        {
+            "filename": "ZeroShell-3.8.1-X86-USB.img",
+            "version": "3.8.1",
+            "md5sum": "49256e396d160e88fbc3a3889e172482",
+            "filesize": 1992294400,
+            "download_url": "http://www.zeroshell.org/download/",
+            "direct_download_url": "http://www.zeroshell.net/listing/ZeroShell-3.8.1-X86-USB.img.gz",
+            "compression": "gzip"
+        },
+        {
+            "filename": "ZeroShell-3.8.0-X86-USB.img",
+            "version": "3.8.0",
+            "md5sum": "a16d584c831f3e88ea442a2343d71cfa",
+            "filesize": 1992294400,
+            "download_url": "http://www.zeroshell.org/download/",
+            "direct_download_url": "http://www.zeroshell.net/listing/ZeroShell-3.8.0-X86-USB.img.gz",
+            "compression": "gzip"
+        },
+        {
+            "filename": "ZeroShell-3.7.1-USB.img",
+            "version": "3.7.1",
+            "md5sum": "22e739a24dc1c233d3eca5d8fedc97c8",
+            "filesize": 1992294400,
+            "download_url": "http://www.zeroshell.org/download/",
+            "direct_download_url": "http://www.zeroshell.net/listing/ZeroShell-3.7.1-USB.img.gz",
+            "compression": "gzip"
+        }
+    ],
+    "versions": [
+        {
+            "name": "3.9.3",
+            "images": {
+                "hda_disk_image": "ZeroShell-3.9.3-X86-USB.img"
+            }
+        },
+        {
+            "name": "3.8.2",
+            "images": {
+                "hda_disk_image": "ZeroShell-3.8.2-X86-USB.img"
+            }
+        },
+        {
+            "name": "3.8.1",
+            "images": {
+                "hda_disk_image": "ZeroShell-3.8.1-X86-USB.img"
+            }
+        },
+        {
+            "name": "3.8.0",
+            "images": {
+                "hda_disk_image": "ZeroShell-3.8.0-X86-USB.img"
+            }
+        },
+        {
+            "name": "3.7.1",
+            "images": {
+                "hda_disk_image": "ZeroShell-3.7.1-USB.img"
+            }
+        }
+    ]
+}

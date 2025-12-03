@@ -1,0 +1,19 @@
+{
+    "appliance_id": "c95b160b-4515-4cc9-81cc-92ac063dd250",
+    "name": "Chromium",
+    "category": "guest",
+    "description": "The chromium browser",
+    "vendor_name": "Chromium",
+    "vendor_url": "https://www.chromium.org/",
+    "vendor_logo_url": "https://raw.githubusercontent.com/GNS3/gns3-registry/master/vendor-logos/Chromium.jpg",
+    "product_name": "Chromium",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "docker": {
+        "adapters": 1,
+        "image": "gns3/chromium:latest",
+        "console_type": "vnc"
+    }
+}

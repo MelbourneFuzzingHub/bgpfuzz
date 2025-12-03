@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>
+    Controller status
+</h1>
+The purpose of this page is to help for GNS3 debug. This can be dropped
+in futur GNS3 versions.
+
+<h2>Projects</h2>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Nodes</th>
+        <th>Links</th>
+    </tr>
+{% for project in controller.projects.values() %}
+<tr>
+    <td><a href="/projects/{{project.id}}">{{project.name}}</a></td>
+    <td><a href="/projects/{{project.id}}">{{project.id}}</a></td>
+    <td>{{project.status}}</td>
+    <td>{{project.nodes|length}}</td>
+    <td>{{project.links|length}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h2>Computes</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Version</th>
+        <th>Connected</th>
+        <th>Protocol</th>
+        <th>Host</th>
+        <th>Port</th>
+    </tr>
+{% for compute in controller.computes.values() %}
+<tr>
+    <td>{{compute.id}}</td>
+    <td>{{compute.name}}</td>
+    <td>{{compute.version}}</td>
+    <td>{{compute.connected}}</td>
+    <td>{{compute.protocol}}</td>
+    <td>{{compute.host}}</td>
+    <td>{{compute.port}}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+{%endblock%}

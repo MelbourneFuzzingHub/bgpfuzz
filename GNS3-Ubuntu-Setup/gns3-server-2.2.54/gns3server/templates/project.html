@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<script>
+var socket = new WebSocket("ws://" + location.host + "/v2/projects/{{project.id}}/notifications/ws");
+socket.onopen = function (event) {
+    document.getElementById("notifications").innerText = "Connected";
+};
+
+socket.onmessage = function (event) {
+    document.getElementById("notifications").innerText = event.data + "\n" + document.getElementById("notifications").innerText;
+};
+
+</script>
+{% endblock %}
+
+
+{% block body %}
+<h1>
+    {{project.name}} 
+</h1>
+The purpose of this page is to help for GNS3 debug. This can be dropped
+in futur GNS3 versions.
+
+<h2>Nodes</h2>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Compute</th>
+        <th>Console</th>
+    </tr>
+{% for node in project.nodes.values() %}
+<tr>
+    <td>{{node.name}}</td>
+    <td>{{node.id}}</td>
+    <td>{{node.status}}</td>
+    <td>{{node.compute.id}}</td>
+    <td><a href="{{node.console_type}}://{{node.host}}:{{node.console}}">Console</a>
+</tr>
+{% endfor %}
+</table>
+
+<h2>Links</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Capture</th>
+        <th>PCAP</th>
+    </tr>
+{% for link in project.links.values() %}
+<tr>
+    <td>{{link.id}}</td>
+    <td>
+        {% if link.debug_link_data|length == 2 %}
+            {{link.debug_link_data[0]}}<br>
+            {{link.debug_link_data[1]}}
+        {% endif %}
+    </td>
+    <td>{{link.capturing}}</td>
+    <td><a href="/v2/projects/{{project.id}}/links/{{link.id}}/pcap">Download</a></td>
+</tr>
+{% endfor %}
+</table>
+
+
+<h2>Drawings</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Position</th>
+        <th>Content</th>
+    </tr>
+{% for drawing in project.drawings.values() %}
+<tr>
+    <td>{{drawing.id}}</td>
+    <td>{{drawing.x}}, {{drawing.y}}, {{drawing.z}}</td>
+    <td>{{drawing.svg}}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+
+<h2>Notifications</h2>
+<div id="notifications">
+</div>
+{%endblock%}
+

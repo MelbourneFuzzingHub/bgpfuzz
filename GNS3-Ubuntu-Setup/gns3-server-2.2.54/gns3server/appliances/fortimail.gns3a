@@ -1,0 +1,392 @@
+{
+    "appliance_id": "4089ee66-e13b-4490-aa51-53cdb969e024",
+    "name": "FortiMail",
+    "category": "guest",
+    "description": "FortiMail is a complete Secure Email Gateway offering suitable for any size organization. It provides a single solution to protect against inbound attacks - including advanced malware -, as well as outbound threats and data loss with a wide range of top-rated security capabilities.",
+    "vendor_name": "Fortinet",
+    "vendor_url": "http://www.fortinet.com/",
+    "vendor_logo_url": "https://raw.githubusercontent.com/GNS3/gns3-registry/master/vendor-logos/FortiMail.jpg",
+    "documentation_url": "http://docs.fortinet.com/fortimail/admin-guides",
+    "product_name": "FortiMail",
+    "product_url": "http://www.fortinet.com/products/fortimail/index.html",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "First boot takes a few minutes. Admin URL is https://x.x.x.x/admin, default username is admin, no password is set.",
+    "symbol": "fortinet.svg",
+    "port_name_format": "Port{port1}",
+    "qemu": {
+        "adapter_type": "virtio-net-pci",
+        "adapters": 4,
+        "ram": 1024,
+        "hda_disk_interface": "virtio",
+        "hdb_disk_interface": "virtio",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "boot_priority": "c",
+        "kvm": "allow"
+    },
+    "images": [
+        {
+            "filename": "FML_VMKV-64-v722.M-build0380-FORTINET.out.kvm.qcow2",
+            "version": "7.2.2",
+            "md5sum": "ec7c32c90f4cfba32a744ea74adc596b",
+            "filesize": 124387328,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v721.M-build0364-FORTINET.out.kvm.qcow2",
+            "version": "7.2.1",
+            "md5sum": "b7bf13c2fb013693936b45d89dfab1ac",
+            "filesize": 123535360,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v705-build0208-FORTINET.out.kvm.qcow2",
+            "version": "7.0.5",
+            "md5sum": "62e561465ff8134efdea6f66ba9ccf20",
+            "filesize": 118226944,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v647-build0467-FORTINET.out.kvm.qcow2",
+            "version": "6.4.7",
+            "md5sum": "11fab90b39d88446a711bbd01802aca1",
+            "filesize": 112066560,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v60-build0257-FORTINET.out.kvm.qcow2",
+            "version": "6.2.1",
+            "md5sum": "79449970d26979af79b0ccb7b0cf3880",
+            "filesize": 104464384,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v60-build0160-FORTINET.out.kvm.qcow2",
+            "version": "6.0.7",
+            "md5sum": "925a0b76607613962119cd5ea568458f",
+            "filesize": 99483648,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v60-build0143-FORTINET.out.kvm.qcow2",
+            "version": "6.0.4",
+            "md5sum": "e6401ecfe9b145256cccb29757bbddfe",
+            "filesize": 98959360,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v60-build0126-FORTINET.out.kvm.qcow2",
+            "version": "6.0.3",
+            "md5sum": "b062636f029ff0f3d4b74451cc70b755",
+            "filesize": 96731136,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v54-build0719-FORTINET.out.kvm.qcow2",
+            "version": "5.4.5",
+            "md5sum": "e2f202efd28039a6f1f4ebb7ee69e214",
+            "filesize": 97255424,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v54-build0714-FORTINET.out.kvm.qcow2",
+            "version": "5.4.4",
+            "md5sum": "6a3155d9cee6af3ecb016e59c0a0765f",
+            "filesize": 93519872,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v54-build0712-FORTINET.out.kvm.qcow2",
+            "version": "5.4.3",
+            "md5sum": "977effe7b885ca5cedec7740a2a637aa",
+            "filesize": 93454336,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v54-build0707-FORTINET.out.kvm.qcow2",
+            "version": "5.4.2",
+            "md5sum": "b51260cc3e408bf1352a204b8370254b",
+            "filesize": 92864512,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v54-build0704-FORTINET.out.kvm.qcow2",
+            "version": "5.4.1",
+            "md5sum": "1f6553e182512cc87e20f47cc2b65abf",
+            "filesize": 94568448,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v54-build0692-FORTINET.out.kvm.qcow2",
+            "version": "5.4.0",
+            "md5sum": "c9e0885cab65e52ab01d8143ed466b01",
+            "filesize": 101253120,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0653-FORTINET.out.kvm.qcow2",
+            "version": "5.3.12",
+            "md5sum": "aed4dcb17de047860736d8742362a754",
+            "filesize": 89980928,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0648-FORTINET.out.kvm.qcow2",
+            "version": "5.3.11",
+            "md5sum": "bd34a81c1bb6772c7e4919620027a5d4",
+            "filesize": 88670208,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0643-FORTINET.out.kvm.qcow2",
+            "version": "5.3.10",
+            "md5sum": "08f3258533ac2b4f15e86ca3973be17e",
+            "filesize": 88801280,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0634-FORTINET.out.kvm.qcow2",
+            "version": "5.3.9",
+            "md5sum": "a66b82f0713ba4ea418bd959d0cb5732",
+            "filesize": 86376448,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0627-FORTINET.out.kvm.qcow2",
+            "version": "5.3.8",
+            "md5sum": "83108e5cb68bad681b68ec1ef7e29f25",
+            "filesize": 86769664,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0623-FORTINET.out.kvm.qcow2",
+            "version": "5.3.7",
+            "md5sum": "7e208d04c3f9bc4dedcf6d45e8d99a76",
+            "filesize": 86573056,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0621-FORTINET.out.kvm.qcow2",
+            "version": "5.3.6",
+            "md5sum": "3fe1521b73af886359d78eb4c1509466",
+            "filesize": 86638592,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0618-FORTINET.out.kvm.qcow2",
+            "version": "5.3.5",
+            "md5sum": "5f4159956b87538c008654c030e00e37",
+            "filesize": 86376448,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0608-FORTINET.out.kvm.qcow2",
+            "version": "5.3.4",
+            "md5sum": "b78f647148923e1bddfa2dcfbcc0c85c",
+            "filesize": 86048768,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0599-FORTINET.out.kvm.qcow2",
+            "version": "5.3.3",
+            "md5sum": "f1f3ae5593029d4fc0a5024bcf786cc7",
+            "filesize": 84606976,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FML_VMKV-64-v53-build0593-FORTINET.out.kvm.qcow2",
+            "version": "5.3.2",
+            "md5sum": "0447819ed4aa382ea6871c0cb913b592",
+            "filesize": 84541440,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "empty30G.qcow2",
+            "version": "1.0",
+            "md5sum": "3411a599e822f2ac6be560a26405821a",
+            "filesize": 197120,
+            "download_url": "https://sourceforge.net/projects/gns-3/files/Empty%20Qemu%20disk/",
+            "direct_download_url": "https://sourceforge.net/projects/gns-3/files/Empty%20Qemu%20disk/empty30G.qcow2/download"
+        }
+    ],
+    "versions": [
+        {
+            "name": "7.2.2",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v722.M-build0380-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "7.2.1",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v721.M-build0364-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "7.0.5",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v705-build0208-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "6.4.7",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v647-build0467-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "6.2.1",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v60-build0257-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "6.0.7",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v60-build0160-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "6.0.4",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v60-build0143-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "6.0.3",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v60-build0126-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.4.5",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v54-build0719-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.4.4",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v54-build0714-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.4.3",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v54-build0712-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.4.2",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v54-build0707-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.4.1",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v54-build0704-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.4.0",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v54-build0692-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.12",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0653-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.11",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0648-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.10",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0643-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.9",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0634-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.8",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0627-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.7",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0623-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.6",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0621-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.5",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0618-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.4",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0608-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.3",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0599-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        },
+        {
+            "name": "5.3.2",
+            "images": {
+                "hda_disk_image": "FML_VMKV-64-v53-build0593-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "empty30G.qcow2"
+            }
+        }
+    ]
+}

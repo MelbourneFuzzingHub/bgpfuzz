@@ -1,0 +1,116 @@
+{
+    "appliance_id": "46322c6c-10ba-4c6c-823c-12b3ff8b6939",
+    "name": "Ubuntu Cloud Guest",
+    "category": "guest",
+    "description": "The term 'Ubuntu Cloud Guest' refers to the Official Ubuntu images that are available at http://cloud-images.ubuntu.com . These images are built by Canonical. They are then registered on EC2, and compressed tarfiles are made also available for download. For using those images on a public cloud such as Amazon EC2, you simply choose an image and launch it. To use those images on a private cloud, or to run the image on a local hypervisor (such as KVM) you would need to download those images and either publish them to your private cloud, or launch them directly on a hypervisor. The following sections explain in more details how to perform each of those actions",
+    "vendor_name": "Canonical Inc.",
+    "vendor_url": "https://www.ubuntu.com",
+    "vendor_logo_url": "https://raw.githubusercontent.com/GNS3/gns3-registry/master/vendor-logos/Ubuntu Cloud Guest.png",
+    "documentation_url": "https://help.ubuntu.com/community/UEC/Images",
+    "product_name": "Ubuntu Cloud Guest",
+    "product_url": "https://www.ubuntu.com/cloud",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "Username: ubuntu\nPassword: ubuntu",
+    "port_name_format": "Ethernet{0}",
+    "qemu": {
+        "adapter_type": "virtio-net-pci",
+        "adapters": 1,
+        "ram": 1024,
+        "hda_disk_interface": "virtio",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "boot_priority": "c",
+        "kvm": "require",
+        "options": "-nographic"
+    },
+    "images": [
+        {
+            "filename": "ubuntu-24.10-server-cloudimg-amd64.img",
+            "version": "Ubuntu 24.10 (Oracular Oriole)",
+            "md5sum": "f2960f8743efedd0a4968bfcd9451782",
+            "filesize": 627360256,
+            "download_url": "https://cloud-images.ubuntu.com/releases/oracular/release-20241009/",
+            "direct_download_url": "https://cloud-images.ubuntu.com/releases/oracular/release-20241009/ubuntu-24.10-server-cloudimg-amd64.img"
+        },
+        {
+            "filename": "ubuntu-24.04-server-cloudimg-amd64.img",
+            "version": "Ubuntu 24.04 LTS (Noble Numbat)",
+            "md5sum": "a1c8a01953578ad432cbef03db2f3161",
+            "filesize": 587241984,
+            "download_url": "https://cloud-images.ubuntu.com/releases/noble/release-20241004/",
+            "direct_download_url": "https://cloud-images.ubuntu.com/releases/noble/release-20241004/ubuntu-24.04-server-cloudimg-amd64.img"
+        },
+        {
+            "filename": "ubuntu-22.04-server-cloudimg-amd64.img",
+            "version": "Ubuntu 22.04 LTS (Jammy Jellyfish)",
+            "md5sum": "8f9a70435dc5b0b86cf5d0d4716b6091",
+            "filesize": 653668352,
+            "download_url": "https://cloud-images.ubuntu.com/releases/jammy/release-20241002/",
+            "direct_download_url": "https://cloud-images.ubuntu.com/releases/jammy/release-20241002/ubuntu-22.04-server-cloudimg-amd64.img"
+        },
+        {
+            "filename": "ubuntu-20.04-server-cloudimg-amd64.img",
+            "version": "Ubuntu 20.04 LTS (Focal Fossa)",
+            "md5sum": "1dff90e16acb0167c27ff82e4ac1813a",
+            "filesize": 627310592,
+            "download_url": "https://cloud-images.ubuntu.com/releases/focal/release-20240821/",
+            "direct_download_url": "https://cloud-images.ubuntu.com/releases/focal/release-20240821/ubuntu-20.04-server-cloudimg-amd64.img"
+        },
+        {
+            "filename": "ubuntu-18.04-server-cloudimg-amd64.img",
+            "version": "Ubuntu 18.04 LTS (Bionic Beaver)",
+            "md5sum": "62fa110eeb0459c1ff166f897aeb9f78",
+            "filesize": 405667840,
+            "download_url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/",
+            "direct_download_url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img"
+        },
+        {
+            "filename": "ubuntu-cloud-init-data.iso",
+            "version": "1.1",
+            "md5sum": "9a90ee8f88736204c756015b3cd86500",
+            "filesize": 374784,
+            "download_url": "https://github.com/GNS3/gns3-registry/tree/master/cloud-init/ubuntu-cloud",
+            "direct_download_url": "https://github.com/GNS3/gns3-registry/raw/master/cloud-init/ubuntu-cloud/ubuntu-cloud-init-data.iso"
+        }
+    ],
+    "versions": [
+        {
+            "name": "Ubuntu 24.10 (Oracular Oriole)",
+            "images": {
+                "hda_disk_image": "ubuntu-24.10-server-cloudimg-amd64.img",
+                "cdrom_image": "ubuntu-cloud-init-data.iso"
+            }
+        },
+        {
+            "name": "Ubuntu 24.04 LTS (Noble Numbat)",
+            "images": {
+                "hda_disk_image": "ubuntu-24.04-server-cloudimg-amd64.img",
+                "cdrom_image": "ubuntu-cloud-init-data.iso"
+            }
+        },
+        {
+            "name": "Ubuntu 22.04 LTS (Jammy Jellyfish)",
+            "images": {
+                "hda_disk_image": "ubuntu-22.04-server-cloudimg-amd64.img",
+                "cdrom_image": "ubuntu-cloud-init-data.iso"
+            }
+        },
+        {
+            "name": "Ubuntu 20.04 LTS (Focal Fossa)",
+            "images": {
+                "hda_disk_image": "ubuntu-20.04-server-cloudimg-amd64.img",
+                "cdrom_image": "ubuntu-cloud-init-data.iso"
+            }
+        },
+        {
+            "name": "Ubuntu 18.04 LTS (Bionic Beaver)",
+            "images": {
+                "hda_disk_image": "ubuntu-18.04-server-cloudimg-amd64.img",
+                "cdrom_image": "ubuntu-cloud-init-data.iso"
+            }
+        }
+    ]
+}

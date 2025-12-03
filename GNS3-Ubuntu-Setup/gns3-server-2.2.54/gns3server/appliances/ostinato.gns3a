@@ -1,0 +1,75 @@
+{
+    "appliance_id": "915a93b4-b78f-47b4-9a6e-cadc25d55c0a",
+    "name": "Ostinato",
+    "category": "guest",
+    "description": "Packet crafter and traffic generator for network engineers",
+    "vendor_name": "Ostinato",
+    "vendor_url": "https://ostinato.org/",
+    "vendor_logo_url": "https://raw.githubusercontent.com/GNS3/gns3-registry/master/vendor-logos/Ostinato.png",
+    "documentation_url": "https://ostinato.org/docs",
+    "product_name": "Ostinato",
+    "product_url": "https://ostinato.org/",
+    "registry_version": 4,
+    "status": "stable",
+    "availability": "service-contract",
+    "maintainer": "Srivats P",
+    "maintainer_email": "support@ostinato.org",
+    "symbol": ":/symbols/affinity/circle/gray/cog.svg",
+    "first_port_name": "eth0/mgmt",
+    "port_name_format": "eth{port1}",
+    "linked_clone": true,
+    "qemu": {
+        "adapter_type": "e1000",
+        "adapters": 4,
+        "ram": 256,
+        "cpus": 2,
+        "hda_disk_interface": "sata",
+        "arch": "i386",
+        "console_type": "vnc",
+        "kvm": "allow",
+        "options": "-vga std -usbdevice tablet"
+    },
+    "images": [
+        {
+            "version": "1.3.0",
+            "filename": "ostinatostd-1.3.0-1.qcow2",
+            "filesize": 173735936,
+            "md5sum": "ff25fed989c43aeac84bf0d542ad43ba",
+            "download_url": "https://ostinato.org/pricing/gns3"
+        },
+        {
+            "filename": "ostinatostd-1.2.0-1.qcow2",
+            "version": "1.2.0",
+            "md5sum": "682680fe75f88975992c0a1a5c973149",
+            "filesize": 173801472,
+            "download_url": "https://ostinato.org/pricing/gns3"
+        },
+        {
+            "filename": "ostinatostd-1.1-1.qcow2",
+            "version": "1.1",
+            "md5sum": "aa027e83cefea1c38d0102eb2f28956e",
+            "filesize": 134217728,
+            "download_url": "https://ostinato.org/pricing/gns3"
+        }
+    ],
+    "versions": [
+        {
+            "name": "1.3.0",
+            "images": {
+                "hda_disk_image": "ostinatostd-1.3.0-1.qcow2"
+            }
+        },
+        {
+            "name": "1.2.0",
+            "images": {
+                "hda_disk_image": "ostinatostd-1.2.0-1.qcow2"
+            }
+        },
+        {
+            "name": "1.1",
+            "images": {
+                "hda_disk_image": "ostinatostd-1.1-1.qcow2"
+            }
+        }
+    ]
+}

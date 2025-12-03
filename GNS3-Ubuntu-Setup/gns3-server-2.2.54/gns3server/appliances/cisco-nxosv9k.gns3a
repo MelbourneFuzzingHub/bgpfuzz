@@ -1,0 +1,126 @@
+{
+    "appliance_id": "f739d949-136b-4a56-8b0f-d39832e5aa30",
+    "name": "Cisco NX-OSv 9000",
+    "category": "multilayer_switch",
+    "description": "The NX-OSv 9000 is a virtual platform that is designed to simulate the control plane aspects of a network element running Cisco Nexus 9000 software. The NX-OSv 9000 shares the same software image running on Cisco Nexus 9000 hardware platform although no specific hardware emulation is implemented. When the software runs as a virtual machine, line card (LC) ASIC provisioning or any interaction from the control plane to hardware ASIC is handled by the NX-OSv 9000 software data plane.\nThe NX-OSv 9000 for the Cisco Nexus 9000 Series provides a useful tool to enable the devops model and rapidly test changes to the infrastructure or to infrastructure automation tools. This enables network simulations in large scale for customers to validate configuration changes on a simulated network prior to applying them on a production network. Some users have also expressed interest in using the simulation system for feature test ,verification, and automation tooling development and test simualtion prior to deployment. NX-OSv 9000 can be used as a programmability vehicle to validate software defined networks (SDNs) and Network Function Virtualization (NFV) based solutions.",
+    "vendor_name": "Cisco",
+    "vendor_url": "http://www.cisco.com/",
+    "documentation_url": "https://developer.cisco.com/docs/modeling-labs/nx-os-9000/",
+    "product_name": "NX-OSv 9000",
+    "product_url": "https://developer.cisco.com/modeling-labs/",
+    "registry_version": 4,
+    "status": "stable",
+    "availability": "service-contract",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "The old (I5) versions might require 8192 MB of RAM; adjust it if necessary.",
+    "first_port_name": "mgmt0",
+    "port_name_format": "Ethernet1/{port1}",
+    "qemu": {
+        "adapter_type": "e1000",
+        "adapters": 10,
+        "ram": 8096,
+        "cpus": 2,
+        "hda_disk_interface": "sata",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "kvm": "require"
+    },
+    "images": [
+        {
+            "filename": "nexus9500v64.10.5.1.F.qcow2",
+            "version": "9500v 10.5.1.F",
+            "md5sum": "2fa6fb4dd4c5e49d53896d60fa746e59",
+            "filesize": 2388459520,
+            "download_url": "https://software.cisco.com/download/home/286312239/type/282088129/release/10.5(1)"
+        },
+        {
+            "filename": "nexus9300v64.10.5.1.F.qcow2",
+            "version": "9300v 10.5.1.F",
+            "md5sum": "2bbc767debbc7c1144eabe176ae67503",
+            "filesize": 2388393984,
+            "download_url": "https://software.cisco.com/download/home/286312239/type/282088129/release/10.5(1)"
+        },
+        {
+            "filename": "nexus9500v64.10.3.1.F.qcow2",
+            "version": "9500v 10.3.1.F",
+            "md5sum": "41e3c1c0c003b13f1bf774f0d1873e87",
+            "filesize": 2097510400,
+            "download_url": "https://software.cisco.com/download/home/286312239/type/282088129/release/10.3(1)"
+        },
+        {
+            "filename": "nexus9300v64.10.3.1.F.qcow2",
+            "version": "9300v 10.3.1.F",
+            "md5sum": "a6ffd2501a5791c11cee319943b912da",
+            "filesize": 2097086464,
+            "download_url": "https://software.cisco.com/download/home/286312239/type/282088129/release/10.3(1)"
+        },
+        {
+            "filename": "nexus9500v64.10.1.1.qcow2",
+            "version": "9500v 10.1.1",
+            "md5sum": "35672370b0f43e725d5b2d92488524f0",
+            "filesize": 1592000512,
+            "download_url": "https://software.cisco.com/download/home/286312239/type/282088129/release/10.1(1)"
+        },
+        {
+            "filename": "nexus9300v.10.1.1.qcow2",
+            "version": "9300v 10.1.1",
+            "md5sum": "4051bdb96aff6e54b72b7e3b06c9d6eb",
+            "filesize": 1990983680,
+            "download_url": "https://software.cisco.com/download/home/286312239/type/282088129/release/10.1(1)"
+        },
+        {
+            "filename": "OVMF-edk2-stable202305.fd",
+            "version": "stable202305",
+            "md5sum": "6c4cf1519fec4a4b95525d9ae562963a",
+            "filesize": 4194304,
+            "download_url": "https://sourceforge.net/projects/gns-3/files/Qemu%20Appliances/",
+            "direct_download_url": "https://sourceforge.net/projects/gns-3/files/Qemu%20Appliances/OVMF-edk2-stable202305.fd.zip/download",
+            "compression": "zip"
+        }
+    ],
+    "versions": [
+        {
+            "name": "9500v 10.5.1.F",
+            "images": {
+                "bios_image": "OVMF-edk2-stable202305.fd",
+                "hda_disk_image": "nexus9500v64.10.5.1.F.qcow2"
+            }
+        },
+        {
+            "name": "9300v 10.5.1.F",
+            "images": {
+                "bios_image": "OVMF-edk2-stable202305.fd",
+                "hda_disk_image": "nexus9300v64.10.5.1.F.qcow2"
+            }
+        },
+        {
+            "name": "9500v 10.3.1.F",
+            "images": {
+                "bios_image": "OVMF-edk2-stable202305.fd",
+                "hda_disk_image": "nexus9500v64.10.3.1.F.qcow2"
+            }
+        },
+        {
+            "name": "9300v 10.3.1.F",
+            "images": {
+                "bios_image": "OVMF-edk2-stable202305.fd",
+                "hda_disk_image": "nexus9300v64.10.3.1.F.qcow2"
+            }
+        },
+        {
+            "name": "9500v 10.1.1",
+            "images": {
+                "bios_image": "OVMF-edk2-stable202305.fd",
+                "hda_disk_image": "nexus9500v64.10.1.1.qcow2"
+            }
+        },
+        {
+            "name": "9300v 10.1.1",
+            "images": {
+                "bios_image": "OVMF-edk2-stable202305.fd",
+                "hda_disk_image": "nexus9300v.10.1.1.qcow2"
+            }
+        }
+    ]
+}

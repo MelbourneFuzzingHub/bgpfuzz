@@ -1,0 +1,210 @@
+{
+    "appliance_id": "88252124-93a4-4851-9b0f-b0f264705c1a",
+    "name": "FortiSandbox",
+    "category": "firewall",
+    "description": "Today's threats are increasingly sophisticated and often bypass traditional malware security by masking their malicious activity. A sandbox augments your security architecture by validating threats in a separate, secure environment. FortiSandbox offers a powerful combination of advanced detection, automated mitigation, actionable insight, and flexible deployment to stop targeted attacks and subsequent data loss. It's also a key component of our Advanced Threat Protection solution.",
+    "vendor_name": "Fortinet",
+    "vendor_url": "http://www.fortinet.com/",
+    "vendor_logo_url": "https://raw.githubusercontent.com/GNS3/gns3-registry/master/vendor-logos/FortiSandbox.jpg",
+    "documentation_url": "http://docs.fortinet.com/fortisandbox/admin-guides",
+    "product_name": "FortiSandbox",
+    "product_url": "https://www.fortinet.com/products/sandbox/fortisandbox.html",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "First boot will take some time without console output. Default username is admin, no password is set.",
+    "symbol": "fortinet.svg",
+    "port_name_format": "Port{port1}",
+    "qemu": {
+        "adapter_type": "virtio-net-pci",
+        "adapters": 3,
+        "ram": 8096,
+        "hda_disk_interface": "virtio",
+        "hdb_disk_interface": "virtio",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "boot_priority": "c",
+        "kvm": "require",
+        "options": "-smp 2"
+    },
+    "images": [
+        {
+            "filename": "FSA_KVM-v400-build0231-FORTINET.out.kvm.qcow2",
+            "version": "4.2.2",
+            "md5sum": "02b7f49e3c04861601a7af26452eed66",
+            "filesize": 156172304,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v300-build0124-FORTINET.out.kvm.qcow2",
+            "version": "3.1.2",
+            "md5sum": "fc2b9a00d20063a6fa4103360d89a2d4",
+            "filesize": 186253824,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v300-build0060-FORTINET.out.kvm.qcow2",
+            "version": "3.0.4",
+            "md5sum": "7e744c4d62430917aea4533672710b5a",
+            "filesize": 157221376,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v300-build0049-FORTINET.out.kvm.qcow2",
+            "version": "3.0.3",
+            "md5sum": "3ef1f05124d13e23332b8b90f8f71c2c",
+            "filesize": 156828160,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v300-build0029-FORTINET.out.kvm.qcow2",
+            "version": "3.0.1",
+            "md5sum": "a2f6c5297a722c5dba40327734a6e0ac",
+            "filesize": 153158144,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v200-build0340-FORTINET.out.kvm.qcow2",
+            "version": "2.5.2",
+            "md5sum": "527f3225bd3fbd4ba23779cc1987d2ed",
+            "filesize": 117834240,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v200-build0329-FORTINET.out.kvm.qcow2",
+            "version": "2.5.1",
+            "md5sum": "782ba56a644d78da59b89f4ac91bd319",
+            "filesize": 114491904,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v200-build0261-FORTINET.out.kvm.qcow2",
+            "version": "2.4.1",
+            "md5sum": "6551ccca8ffe6333742dad54770a01cd",
+            "filesize": 98763264,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v200-build0252-FORTINET.out.kvm.qcow2",
+            "version": "2.4.0",
+            "md5sum": "47a4489e617f165b92fd8dda68e00bf2",
+            "filesize": 99811840,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v200-build0205-FORTINET.out.kvm.qcow2",
+            "version": "2.3.3",
+            "md5sum": "1ecb0acf1604bdeee0beb1b75864ca99",
+            "filesize": 94962176,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_KVM-v200-build0195-FORTINET.out.kvm.qcow2",
+            "version": "2.3.2",
+            "md5sum": "00147d048c8002c98aa55d73f022204d",
+            "filesize": 115868160,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA_VM-v200-build0183-FORTINET.out.kvm.qcow2",
+            "version": "2.3.0",
+            "md5sum": "2ff03862e33c8a826a0bce10be12f45e",
+            "filesize": 118226944,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        },
+        {
+            "filename": "FSA-datadrive.qcow2",
+            "version": "All",
+            "md5sum": "f2dc0a8fc7591699c364aff400369157",
+            "filesize": 200192,
+            "download_url": "https://support.fortinet.com/Download/FirmwareImages.aspx"
+        }
+    ],
+    "versions": [
+        {
+            "name": "4.2.2",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v400-build0231-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "3.1.2",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v300-build0124-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "3.0.4",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v300-build0060-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "3.0.3",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v300-build0049-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "3.0.1",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v300-build0029-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "2.5.2",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v200-build0340-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "2.5.1",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v200-build0329-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "2.4.1",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v200-build0261-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "2.4.0",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v200-build0252-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "2.3.3",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v200-build0205-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "2.3.2",
+            "images": {
+                "hda_disk_image": "FSA_KVM-v200-build0195-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        },
+        {
+            "name": "2.3.0",
+            "images": {
+                "hda_disk_image": "FSA_VM-v200-build0183-FORTINET.out.kvm.qcow2",
+                "hdb_disk_image": "FSA-datadrive.qcow2"
+            }
+        }
+    ]
+}

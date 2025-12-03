@@ -1,0 +1,19 @@
+{
+    "appliance_id": "7f58b246-c4f4-4db2-b4e6-f6180bf235ff",
+    "name": "ipterm",
+    "category": "guest",
+    "description": "ipterm is a debian based networking toolbox.\nIt contains the following utilities: net-tools, iproute2, ping, traceroute, curl, host, iperf3, mtr, socat, ssh client, tcpdump and the multicast testing tools msend/mreceive.",
+    "vendor_name": "ipterm",
+    "vendor_url": "https://www.debian.org",
+    "product_name": "ipterm",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "Bernhard Ehlers",
+    "maintainer_email": "dev-ehlers@mailbox.org",
+    "usage": "The /root directory is persistent.",
+    "symbol": "linux_guest.svg",
+    "docker": {
+        "adapters": 1,
+        "image": "gns3/ipterm:latest"
+    }
+}

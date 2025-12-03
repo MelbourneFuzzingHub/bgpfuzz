@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PacketCapturePreferencesPageWidget</class>
+ <widget class="QWidget" name="PacketCapturePreferencesPageWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>839</width>
+    <height>444</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Packet capture</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="uiSettingsGroupBox">
+     <property name="title">
+      <string>Settings</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="uiPreconfiguredCaptureReaderCommandLabel">
+        <property name="text">
+         <string>Preconfigured packet capture reader commands:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QComboBox" name="uiPreconfiguredCaptureReaderCommandComboBox"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="uiPreconfiguredCaptureReaderCommandPushButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>&amp;Set</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="uiCaptureReaderCommandLabel">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>Packet capture reader command:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QCheckBox" name="uiAutoStartCheckBox">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>Automatically start the packet capture application</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="uiCaptureAnalyzerCommandLabel">
+        <property name="text">
+         <string>Packet capture analyzer command:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0" colspan="2">
+       <widget class="QLineEdit" name="uiCaptureAnalyzerCommandLineEdit"/>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QLineEdit" name="uiCaptureReaderCommandLineEdit">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Command line replacements:&lt;/p&gt;&lt;p&gt;%c or {pcap_file} = capture file (PCAP format)&lt;/p&gt;&lt;p&gt;%P or {project} = project name&lt;/p&gt;&lt;p&gt;%d or {link_description} = link description&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>250</width>
+         <height>17</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="uiRestoreDefaultsPushButton">
+       <property name="text">
+        <string>Restore defaults</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="spacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>5</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>uiPreconfiguredCaptureReaderCommandComboBox</tabstop>
+  <tabstop>uiPreconfiguredCaptureReaderCommandPushButton</tabstop>
+  <tabstop>uiCaptureReaderCommandLineEdit</tabstop>
+  <tabstop>uiAutoStartCheckBox</tabstop>
+  <tabstop>uiCaptureAnalyzerCommandLineEdit</tabstop>
+  <tabstop>uiRestoreDefaultsPushButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

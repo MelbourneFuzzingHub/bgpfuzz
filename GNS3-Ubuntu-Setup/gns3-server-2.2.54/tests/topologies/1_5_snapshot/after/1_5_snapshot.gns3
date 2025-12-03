@@ -1,0 +1,47 @@
+{
+   "type" : "topology",
+   "version" : "ANYSTR",
+   "topology" : {
+      "nodes" : [
+         {
+            "compute_id" : "local",
+            "z" : 1,
+            "y" : -51,
+            "node_id" : "992c28fd-4bc3-4508-9300-48600148f64a",
+            "x" : -128,
+            "console" : 5000,
+            "node_type" : "vpcs",
+            "name" : "PC1",
+            "symbol" : ":/symbols/vpcs_guest.svg",
+            "console_type" : "telnet",
+            "port_name_format": "Ethernet{0}",
+            "port_segment_size": 0,
+            "first_port_name": null,
+            "properties" : {
+            },
+            "label" : {
+               "y" : -25,
+               "style" : "font-family: TypeWriter;font-size: 10;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+               "x" : 18,
+               "text" : "PC1",
+               "rotation" : 0
+            }
+         }
+      ],
+      "links" : [],
+      "drawings" : [],
+      "computes" : [
+         {
+            "name" : "Local",
+            "host" : "127.0.0.1",
+            "compute_id" : "local",
+            "protocol" : "http",
+            "port" : 3080
+         }
+      ]
+   },
+   "revision": 6,
+   "name" : "1_5_snapshot",
+   "project_id" : "17912669-dd40-4843-b348-689b8f34f09d",
+   "auto_start" : false
+}

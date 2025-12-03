@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<script>
+var socket = new WebSocket("ws://" + location.host + "/v2/compute/notifications/ws");
+socket.onopen = function (event) {
+    document.getElementById("notifications").innerText = "Connected";
+};
+
+socket.onmessage = function (event) {
+    document.getElementById("notifications").innerText = event.data + "\n" + document.getElementById("notifications").innerText;
+};
+
+</script>
+{% endblock %}
+
+{% block body %}
+<h1>
+    Compute status
+</h1>
+The purpose of this page is to help for GNS3 debug. This can be dropped
+in future GNS3 versions.
+
+<h2>Opened projects</h2>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>ID</td>
+        <th>Nodes</th>
+        <th>Clients connected</th>
+    </tr>
+{% for project in project_manager.projects %}
+<tr>
+    <td>{{project.name}}</td>
+    <td>{{project.id}}</td>
+    <td>{{project.nodes|length}}</td>
+    <td>{{project.listeners|length}}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+<h2>Ports reserved by GNS3</h2>
+<h3>TCP</h3>
+<ul>
+{% for port in port_manager.tcp_ports %}
+    <li>{{port}}</li>
+{% endfor %}
+</ul>
+
+<h3>UDP</h3>
+<ul>
+{% for port in port_manager.udp_ports %}
+    <li>{{port}}</li>
+{% endfor %}
+</ul>
+
+<h2>Notifications</h2>
+<div id="notifications">
+</div>
+{% endblock %}
+

@@ -1,0 +1,71 @@
+{
+    "appliance_id": "ea678b10-fc52-4079-83de-36769fbd9bc3",
+    "name": "Cisco IOS XRv 9000",
+    "category": "router",
+    "description": "IOS XRv 9000 (aka Sunstone) is the 1st VM released running the 64-bit IOS XR operating system as used on the NCS-6xxx platform. This appliance requires 4 vCPUs and 16GB of memory to run!",
+    "vendor_name": "Cisco",
+    "vendor_url": "http://www.cisco.com/",
+    "documentation_url": "https://developer.cisco.com/docs/modeling-labs/ios-xrv-9000/",
+    "product_name": "IOS XRv 9000",
+    "product_url": "https://developer.cisco.com/modeling-labs/",
+    "registry_version": 4,
+    "status": "experimental",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "Default username/password: admin/admin, cisco/cisco and lab/lab. There is no default configuration present. Interfaces may take several minutes to be usable after appliance boot.\n\nThe interfaces are mapped the following way:\n- NIC0: unused\n- NIC1: unused\n- NIC2: Gi0/0/0/0\n- NIC3: Gi0/0/0/1\n- NICn: Gi0/0/0/(n-2)",
+    "first_port_name": "MgmtEth0/0/CPU0/0",
+    "port_name_format": "NIC{0}",
+    "qemu": {
+        "adapter_type": "virtio-net-pci",
+        "adapters": 7,
+        "ram": 16384,
+        "hda_disk_interface": "ide",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "kvm": "require",
+        "options": "-smp 4 -cpu host"
+    },
+    "images": [
+        {
+            "filename": "xrv9k-fullk9-x-24.3.1.qcow2",
+            "version": "24.3.1",
+            "md5sum": "bd047c457e29952f265583f299bab845",
+            "filesize": 1704658432,
+            "download_url": "https://learningnetworkstore.cisco.com/myaccount"
+        },
+        {
+            "filename": "xrv9k-fullk9-x-7.7.1.qcow2",
+            "version": "7.7.1",
+            "md5sum": "682fff40d2ff373d8da3342906553b54",
+            "filesize": 1643905024,
+            "download_url": "https://learningnetworkstore.cisco.com/myaccount"
+        },
+        {
+            "filename": "xrv9k-fullk9-x-7.1.1.qcow2",
+            "version": "7.1.1",
+            "md5sum": "dcf241e3f8df0151fec2c7bfac9d96ac",
+            "filesize": 1443758080,
+            "download_url": "https://learningnetworkstore.cisco.com/myaccount"
+        }
+    ],
+    "versions": [
+        {
+            "name": "24.3.1",
+            "images": {
+                "hda_disk_image": "xrv9k-fullk9-x-24.3.1.qcow2"
+            }
+        },
+        {
+            "name": "7.7.1",
+            "images": {
+                "hda_disk_image": "xrv9k-fullk9-x-7.7.1.qcow2"
+            }
+        },
+        {
+            "name": "7.1.1",
+            "images": {
+                "hda_disk_image": "xrv9k-fullk9-x-7.1.1.qcow2"
+            }
+        }
+    ]
+}

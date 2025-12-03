@@ -1,0 +1,4 @@
+-rrequirements.txt
+
+pytest==8.3.2
+pytest-timeout==2.3.1

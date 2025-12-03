@@ -1,0 +1,56 @@
+{
+    "appliance_id": "1f197327-9beb-48da-a3fc-f5fb721dc335",
+    "name": "Loadbalancer.org Enterprise VA",
+    "category": "router",
+    "description": "Don't you hate it when companies artificially cripple performance? We just give you two simple choices - Now isn't that a refreshing change?",
+    "vendor_name": "Loadbalancer.org",
+    "vendor_url": "https://loadbalancer.org/",
+    "documentation_url": "https://loadbalancer.org/support/support-resources",
+    "product_name": "Loadbalancer.org Enterprise VA",
+    "product_url": "https://loadbalancer.org/products/virtual",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "Default credentials:\n Network config CLI: setup / setup\n CLI: root / loadbalancer\n WebUI: loadbalancer / loadbalancer",
+    "symbol": "loadbalancer.svg",
+    "qemu": {
+        "adapter_type": "virtio-net-pci",
+        "adapters": 2,
+        "ram": 2048,
+        "hda_disk_interface": "virtio",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "kvm": "require"
+    },
+    "images": [
+        {
+            "filename": "Loadbalancer.org_Enterprise_VA-8.3-disk1.qcow2",
+            "version": "8.3",
+            "md5sum": "f0e41f39a5cab47990edc0509c579bac",
+            "filesize": 368332288,
+            "download_url": "https://loadbalancer.org/resources/free-trial"
+        },
+        {
+            "filename": "Loadbalancer.org_Enterprise_VA-8.2-disk1.qcow2",
+            "version": "8.2",
+            "md5sum": "8b74b330a6f629a081f3b36a5d64605b",
+            "filesize": 8430419968,
+            "download_url": "https://loadbalancer.org/resources/free-trial"
+        }
+    ],
+    "versions": [
+        {
+            "name": "8.3",
+            "images": {
+                "hda_disk_image": "Loadbalancer.org_Enterprise_VA-8.3-disk1.qcow2"
+            }
+        },
+        {
+            "name": "8.2",
+            "images": {
+                "hda_disk_image": "Loadbalancer.org_Enterprise_VA-8.2-disk1.qcow2"
+            }
+        }
+    ]
+}

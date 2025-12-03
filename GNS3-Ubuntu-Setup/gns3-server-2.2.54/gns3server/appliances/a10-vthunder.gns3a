@@ -1,0 +1,72 @@
+{
+    "appliance_id": "7aa41b5b-3ae9-40a7-be38-5c109c59e086",
+    "name": "A10 vThunder",
+    "category": "router",
+    "description": "vThunder, part of A10 Networks' award-winning A10 Thunder and AX Series Application Delivery Controller (ADC) family, is designed to meet the growing needs of organizations that require a flexible and easy-to-deploy application delivery and server load balancer solution running within a virtualized infrastructure.",
+    "vendor_name": "A10",
+    "vendor_url": "https://www.a10networks.com/",
+    "documentation_url": "https://www.a10networks.com/support",
+    "product_name": "A10 vThunder",
+    "product_url": "https://www.a10networks.com/products/vthunder-trial/",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "GNS3 Team",
+    "maintainer_email": "developers@gns3.net",
+    "usage": "Default credentials:\n- CLI: admin / a10.\n- Enable mode: <none>\n\nDefault management IP: 172.31.31.31/24",
+    "symbol": "loadbalancer.svg",
+    "first_port_name": "mgmt",
+    "port_name_format": "ethernet {port1}",
+    "qemu": {
+        "adapter_type": "virtio-net-pci",
+        "adapters": 4,
+        "ram": 4096,
+        "hda_disk_interface": "virtio",
+        "arch": "x86_64",
+        "console_type": "telnet",
+        "boot_priority": "cd",
+        "kvm": "require"
+    },
+    "images": [
+        {
+            "filename": "vThunder_410_P9.qcow2",
+            "version": "4.1.0.P9",
+            "md5sum": "6ef0f69ba7a099a7f43b5815c2abc691",
+            "filesize": 6311706624,
+            "download_url": "https://www.a10networks.com/vthunder-embed"
+        },
+        {
+            "filename": "vThunder_410_P3.qcow2",
+            "version": "4.1.0.P3",
+            "md5sum": "daacefa4e0eb1cad9b253926624be4b9",
+            "filesize": 6098780160,
+            "download_url": "https://www.a10networks.com/vthunder-embed"
+        },
+        {
+            "filename": "vth401.GA.12G_Disk.qcow2",
+            "version": "4.0.1",
+            "md5sum": "311806ad414403359216da6119ddb823",
+            "filesize": 4768464896,
+            "download_url": "https://www.a10networks.com/vthunder-embed"
+        }
+    ],
+    "versions": [
+        {
+            "name": "4.1.0.P9",
+            "images": {
+                "hda_disk_image": "vThunder_410_P9.qcow2"
+            }
+        },
+        {
+            "name": "4.1.0.P3",
+            "images": {
+                "hda_disk_image": "vThunder_410_P3.qcow2"
+            }
+        },
+        {
+            "name": "4.0.1",
+            "images": {
+                "hda_disk_image": "vth401.GA.12G_Disk.qcow2"
+            }
+        }
+    ]
+}
